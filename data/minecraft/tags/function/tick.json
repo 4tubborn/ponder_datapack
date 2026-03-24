@@ -1,6 +1,6 @@
 {
     "values": [
         "ponder:tick",
-        "ponder:util/ponder/tick"
+        "ponder:logic/clock/tick"
     ]
 }

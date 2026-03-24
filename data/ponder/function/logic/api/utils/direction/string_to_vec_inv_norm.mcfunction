@@ -1,0 +1,1 @@
+function ponder:logic/utils/direction/string_to_vec_inv_norm

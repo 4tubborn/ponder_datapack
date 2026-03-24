@@ -1,0 +1,6 @@
+execute if data storage ponder:utils {input:{direction:{string:"up"}}} run return run data modify storage ponder:utils output.direction.vec set value [0,1,0]
+execute if data storage ponder:utils {input:{direction:{string:"down"}}} run return run data modify storage ponder:utils output.direction.vec set value [0,-1,0]
+execute if data storage ponder:utils {input:{direction:{string:"north"}}} run return run data modify storage ponder:utils output.direction.vec set value [0,0,-1]
+execute if data storage ponder:utils {input:{direction:{string:"south"}}} run return run data modify storage ponder:utils output.direction.vec set value [0,0,1]
+execute if data storage ponder:utils {input:{direction:{string:"east"}}} run return run data modify storage ponder:utils output.direction.vec set value [1,0,0]
+execute if data storage ponder:utils {input:{direction:{string:"west"}}} run return run data modify storage ponder:utils output.direction.vec set value [-1,0,0]
