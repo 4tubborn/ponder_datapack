@@ -1,0 +1,25 @@
+{
+    "criteria": {
+        "tick":{
+            "trigger": "tick",
+            "conditions": {
+                "player": {
+                    "type_specific": {
+                        "type": "player",
+                        "input": {
+                            "jump": true
+                        },
+                        "gamemode": ["spectator"]
+                    },
+                    "nbt": {
+                        "Tags":["ponder.in_ponder"]
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [["tick"]],
+    "rewards": {
+        "function": "ponder:debug/unlock_movement"
+    }
+}

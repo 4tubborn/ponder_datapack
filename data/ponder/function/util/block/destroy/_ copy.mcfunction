@@ -1,0 +1,2 @@
+$execute positioned 0 0 0 positioned ~$(x) ~$(y) ~$(z) run function ponder:util/block/destory/particle {block_state:$(block_state)}
+$execute positioned 0 0 0 positioned ~$(x) ~$(y) ~$(z) run setblock ~ ~ ~ air

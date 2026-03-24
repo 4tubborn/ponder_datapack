@@ -1,0 +1,22 @@
+{
+    "criteria": {
+        "tick":{
+            "trigger": "tick",
+            "conditions": {
+                "player": {
+                    "type_specific": {
+                        "type": "player",
+                        "input": {
+                            "sprint": true,
+                            "sneak": true
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [["tick"]],
+    "rewards": {
+        "function": "ponder:transport/set_score"
+    }
+}
