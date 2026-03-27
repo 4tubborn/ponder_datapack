@@ -1,21 +1,21 @@
+#执行者为玩家，在ponder维度
 say exit
-execute in ponder:ponder if loaded ~ ~ ~ run say loaded
-
-
-scoreboard players set #success ponder.debug 0
-execute in ponder:ponder store result score #success ponder.debug run fill 0 0 0 20 20 20 air
-#tellraw @a ["success: ",{score:{name:"#success",objective:"ponder.debug"}}]
-
-execute in ponder:ponder store result score #success ponder.debug run kill @n[type=text_display,tag=ponder.camera]
-#tellraw @a ["success: ",{score:{name:"#success",objective:"ponder.debug"}}]
 
 tag @s remove ponder.in_ponder
 tp @s @e[type=marker,tag=ponder.origin_pos,limit=1]
 
-function ponder:util/player/gamemode/get
+function ponder:logic/world/player/gamemode/get
+
+advancement grant @s only ponder:process/next
 
 #execute at @s run setblock ~ ~ ~ oak_leaves
 
-scoreboard players set #enabled ponder.timer 0
+#scoreboard players set #enabled ponder.timer 0
 
-schedule function ponder:util/ponder/unload 1t
+#清除进入前位置标记
+execute as @n[type=marker,tag=ponder.origin_pos] at @s run forceload remove ~ ~
+#@e能跨纬度选择实体
+kill @e[type=marker,tag=ponder.origin_pos,limit=1]
+
+#后续处理ponder维度，执行位置在世界出生点（比如overworld）
+schedule function ponder:logic/ponder/unload 1t

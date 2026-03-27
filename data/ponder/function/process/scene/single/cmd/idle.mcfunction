@@ -1,1 +1,0 @@
-execute store result score #idle ponder.timer run data get storage ponder:scene cur_cmd.duration

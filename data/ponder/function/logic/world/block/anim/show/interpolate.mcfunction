@@ -4,4 +4,6 @@ execute as @e[tag=ponder.init,type=block_display] run data merge entity @s {\
     transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],scale:[1f,1f,1f],right_rotation:[0f,0f,0f,1f]}\
 }
 
+say 方块展示实体初始化init
+
 tag @e[tag=ponder.scene_entity,tag=ponder.init,type=block_display] remove ponder.init

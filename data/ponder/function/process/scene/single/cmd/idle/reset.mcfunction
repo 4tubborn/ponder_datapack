@@ -1,0 +1,1 @@
+scoreboard players set @p[tag=ponder.in_ponder] ponder.timer 0

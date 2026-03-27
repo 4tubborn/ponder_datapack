@@ -1,10 +1,29 @@
 #筛选在from, to之间的点
-execute positioned ~-100 ~-100 ~ unless entity @e[type=marker,tag=ponder.utils.section.anchor,limit=2,dx=200,dy=200,dz=100] run return fail
-execute positioned ~-100 ~-100 ~-1 unless entity @e[type=marker,tag=ponder.utils.section.anchor,limit=2,dx=200,dy=200,dz=-100] run return fail
-execute positioned ~ ~-100 ~-100 unless entity @e[type=marker,tag=ponder.utils.section.anchor,limit=2,dx=100,dy=200,dz=200] run return fail
-execute positioned ~-1 ~-100 ~-100 unless entity @e[type=marker,tag=ponder.utils.section.anchor,limit=2,dx=-100,dy=200,dz=200] run return fail
-execute positioned ~-100 ~-1 ~-100 unless entity @e[type=marker,tag=ponder.utils.section.anchor,limit=2,dx=200,dy=100,dz=200] run return fail
-execute positioned ~-100 ~-1 ~-100 unless entity @e[type=marker,tag=ponder.utils.section.anchor,limit=2,dx=200,dy=-100,dz=200] run return fail
+# 获取当前步进点的绝对坐标 (假设你通过 align xyz 已经站在整数点了)
+tp ~ ~ ~
 
-tp @n[type=marker,tag=ponder.utils.section.executer] ~ ~ ~
-$execute as @n[type=marker,tag=ponder.utils.section.executer] run $(run)
+
+execute store result score #curr.x ponder.utils.tmp run data get entity @s Pos[0]
+execute store result score #curr.y ponder.utils.tmp run data get entity @s Pos[1]
+execute store result score #curr.z ponder.utils.tmp run data get entity @s Pos[2]
+
+# AABB 碰撞检测 (不在范围内就退出)
+# 检查 X
+execute if score #curr.x ponder.utils.tmp < #min.x ponder.utils.tmp run return fail
+execute if score #curr.x ponder.utils.tmp > #max.x ponder.utils.tmp run return fail
+
+# 检查 Y
+execute if score #curr.y ponder.utils.tmp < #min.y ponder.utils.tmp run return fail
+execute if score #curr.y ponder.utils.tmp > #max.y ponder.utils.tmp run return fail
+
+# 检查 Z
+execute if score #curr.z ponder.utils.tmp < #min.z ponder.utils.tmp run return fail
+execute if score #curr.z ponder.utils.tmp > #max.z ponder.utils.tmp run return fail
+
+# --- 既然通过了筛选，执行你的逻辑 ---
+
+scoreboard players add #debug_count ponder.debug 1
+
+#say runrunrun22222
+
+$$(run)

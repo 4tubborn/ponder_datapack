@@ -1,0 +1,31 @@
+{
+    "criteria": {
+        "next":{
+            "trigger": "tick",
+            "conditions": {
+                "player": [
+                    {
+                        "condition": "entity_scores",
+                        "entity": "this",
+                        "scores": {
+                            "ponder.timer": 0
+                        }
+                    },
+                    {
+                        "condition": "entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "nbt": {
+                                "Tags":["ponder.in_ponder"]
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [["next"]],
+    "rewards": {
+        "function": "ponder:process/scene/single/next"
+    }
+}
