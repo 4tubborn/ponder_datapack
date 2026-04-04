@@ -1,0 +1,2 @@
+execute if data storage ponder:scene {cur_cmd:{show_particle:true}} run function ponder:process/scene/single/cmd/modify_tile_nbt/particle with storage ponder:scene cur_cmd
+function ponder:process/scene/single/cmd/modify_tile_nbt/_ with storage ponder:scene cur_cmd

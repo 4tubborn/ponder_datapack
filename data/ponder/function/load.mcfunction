@@ -9,15 +9,19 @@ scoreboard objectives add ponder.tmp dummy
 scoreboard objectives add ponder.utils.in dummy
 scoreboard objectives add ponder.utils.out dummy
 scoreboard objectives add ponder.utils.tmp dummy
+scoreboard objectives add ponder.group dummy
+scoreboard objectives add ponder.timer.in dummy
+scoreboard objectives add ponder.timer.out dummy
+
 #3位小数
-scoreboard players set #scale_multiplier ponder.const 300
-scoreboard players set #shadow_area_offset ponder.const -100
+scoreboard players set #scale_multiplier ponder.const 600
 
 execute in ponder:ponder run forceload add 0 0
 
 gamerule max_command_sequence_length 1048576
 
 advancement grant @a only ponder:process/next
+advancement grant @a only ponder:process/clock
 
 execute unless score #auto_save ponder.const matches 0..1 run scoreboard players set #auto_save ponder.const 1
 

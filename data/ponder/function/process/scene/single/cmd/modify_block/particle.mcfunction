@@ -1,0 +1,1 @@
+function ponder:logic/world/block/destroy/_ with storage ponder:scene cur_cmd

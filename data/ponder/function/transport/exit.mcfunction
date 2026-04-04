@@ -6,8 +6,6 @@ tp @s @e[type=marker,tag=ponder.origin_pos,limit=1]
 
 function ponder:logic/world/player/gamemode/get
 
-advancement grant @s only ponder:process/next
-
 #execute at @s run setblock ~ ~ ~ oak_leaves
 
 #scoreboard players set #enabled ponder.timer 0
@@ -17,5 +15,22 @@ execute as @n[type=marker,tag=ponder.origin_pos] at @s run forceload remove ~ ~
 #@e能跨纬度选择实体
 kill @e[type=marker,tag=ponder.origin_pos,limit=1]
 
+#防止触发tick检测
+advancement grant @s only ponder:process/next
+advancement grant @s only ponder:process/clock
+#清除schedule
+schedule clear ponder:logic/ponder/load
+schedule clear ponder:logic/ponder/init/
+schedule clear ponder:process/init/_
+
+schedule clear ponder:logic/text/anim/interpolate_fade_in
+schedule clear ponder:logic/text/anim/interpolate_fade_out
+schedule clear ponder:logic/text/anim/remove
+
+schedule clear ponder:logic/world/block/anim/hide/interpolate
+schedule clear ponder:logic/world/block/anim/outline/interpolate
+schedule clear ponder:logic/world/block/anim/show/interpolate
+
+schedule clear ponder:process/scene/single/cmd/idle/reset
 #后续处理ponder维度，执行位置在世界出生点（比如overworld）
 schedule function ponder:logic/ponder/unload 1t

@@ -1,0 +1,1 @@
+execute in ponder:ponder run tag @e[type=#ponder:scene_entity,tag=ponder.scene_entity,tag=ponder.utils.group.executer,distance=0..] remove ponder.utils.group.executer

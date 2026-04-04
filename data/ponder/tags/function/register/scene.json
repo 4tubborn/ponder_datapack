@@ -1,6 +1,8 @@
 {
     "values": [
-        "ponder:builtin_preset/scene/grass_block"
+        "ponder:builtin_preset/scene/grass_block",
+        "ponder:builtin_preset/scene/end_rod",
+        "ponder:builtin_preset/scene/command_block"
     ],
     "replace": false
 }

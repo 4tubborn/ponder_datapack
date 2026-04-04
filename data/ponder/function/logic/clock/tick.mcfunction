@@ -1,7 +1,48 @@
-execute as @a[tag=ponder.in_ponder] in ponder:ponder run function ponder:logic/world/player/stick
-#execute if score #enabled ponder.timer matches 1 run scoreboard players add #timer ponder.timer 1
+advancement revoke @s only ponder:process/clock
 
-#初始化完毕的bde,tde倒计时
-scoreboard players remove @e[tag=ponder.scene_entity,tag=!ponder.init,scores={ponder.timer=1..}] ponder.timer 1
-execute as @e[tag=ponder.scene_entity,tag=!ponder.init,type=block_display,scores={ponder.timer=0}] positioned as @s in ponder:ponder run function ponder:logic/world/block/anim/show/solidify/
-execute as @e[tag=ponder.scene_entity,tag=!ponder.init,type=text_display,scores={ponder.timer=0}] positioned as @s in ponder:ponder run function ponder:logic/text/anim/interpolate_fade_out
+function ponder:logic/world/player/stick
+#execute if score #enabled ponder.timer matches 1 run scoreboard players add #timer ponder.timer 1
+#say tick
+
+
+
+#初始化完毕的bde,tde,ide倒计时
+scoreboard players remove @e[tag=ponder.scene_entity,tag=!ponder.init,scores={ponder.timer=1..},type=#ponder:scene_entity] ponder.timer 1
+scoreboard players remove @e[tag=ponder.scene_entity,tag=!ponder.init,scores={ponder.timer.in=1..},type=#ponder:scene_entity] ponder.timer.in 1
+scoreboard players remove @e[tag=ponder.scene_entity,tag=!ponder.init,scores={ponder.timer.out=1..},type=#ponder:scene_entity] ponder.timer.out 1
+
+#show
+execute as \
+@e[tag=ponder.scene_entity,tag=ponder.anim.show,tag=!ponder.init,type=block_display,scores={ponder.timer.in=0}] \
+run function ponder:logic/world/block/anim/show/interpolate
+execute as \
+@e[tag=ponder.scene_entity,tag=ponder.anim.show,tag=!ponder.init,type=block_display,scores={ponder.timer=0}] \
+positioned as @s run function ponder:logic/world/block/anim/show/solidify/
+
+#hide
+execute as \
+@e[tag=ponder.scene_entity,tag=ponder.anim.hide,tag=!ponder.init,type=block_display,scores={ponder.timer.in=0}] \
+run function ponder:logic/world/block/anim/hide/interpolate
+execute as \
+@e[tag=ponder.scene_entity,tag=ponder.anim.hide,tag=!ponder.init,type=block_display,scores={ponder.timer=0}] \
+positioned as @s run function ponder:logic/world/block/anim/hide/remove
+#
+execute as @e[tag=ponder.scene_entity,tag=ponder.anim.text.offset,tag=!ponder.init,type=text_display,scores={ponder.timer=0}] positioned as @s run function ponder:logic/text/anim/offset/interpolate_fade_out
+#
+execute as @e[tag=ponder.scene_entity,tag=ponder.anim.text.top_right,tag=!ponder.init,type=text_display,scores={ponder.timer=0}] positioned as @s run function ponder:logic/text/anim/top_right/interpolate_fade_out
+
+#text: control
+#淡入
+execute as \
+@e[tag=ponder.scene_entity,tag=ponder.anim.text.control,tag=!ponder.init,type=text_display,scores={ponder.timer.in=0}] \
+run function ponder:logic/text/anim/control/interpolate_fade_in
+#淡出
+execute as \
+@e[tag=ponder.scene_entity,tag=ponder.anim.text.control,tag=!ponder.init,type=text_display,scores={ponder.timer=0}] \
+positioned as @s run function ponder:logic/text/anim/control/interpolate_fade_out
+#删除
+execute as \
+@e[tag=ponder.scene_entity,tag=ponder.anim.text.control,tag=!ponder.init,type=text_display,scores={ponder.timer.out=0}] \
+positioned as @s run function ponder:logic/text/anim/control/remove
+#
+execute as @e[tag=ponder.scene_entity,tag=ponder.anim.outline,tag=!ponder.init,type=item_display,scores={ponder.timer=0}] run function ponder:logic/world/block/anim/outline/remove

@@ -5,6 +5,6 @@ execute unless data storage ponder:anim cur_block_destroy run return 1
 
 say destroy
 
-function ponder:util/block/destroy/_ with storage ponder:anim cur_block_destroy
+function ponder:logic/world/block/destroy/_ with storage ponder:anim cur_block_destroy
 
-function ponder:util/block/destroy/
+function ponder:logic/world/block/destroy/

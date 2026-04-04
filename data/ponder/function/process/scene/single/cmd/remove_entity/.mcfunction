@@ -1,0 +1,1 @@
+$execute as $(selector) run function ponder:process/scene/single/cmd/remove_entity/_

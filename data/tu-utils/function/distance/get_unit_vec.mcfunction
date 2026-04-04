@@ -2,7 +2,7 @@ execute positioned as @n[tag=tu-utils.distance_anchor2] facing entity @n[tag=tu-
 
 execute as @n[tag=tu-utils.distance_anchor1] run say 1
 execute as @n[tag=tu-utils.distance_anchor2] run say 2
-execute at @s run setblock ~ ~ ~ diamond_block
+#execute at @s run setblock ~ ~ ~ diamond_block
 
 
 execute store result score #unit_vec.x tu-utils.out run data get entity @s Pos[0] 1000

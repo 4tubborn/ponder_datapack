@@ -1,0 +1,1 @@
+$summon item $(x) $(y) $(z) {Item:$(item)}

@@ -1,1 +1,0 @@
-function ponder:logic/utils/render_area/map_to_shadow_area/

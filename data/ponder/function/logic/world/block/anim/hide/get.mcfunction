@@ -1,0 +1,1 @@
+$execute positioned $(x) $(y) $(z) run function #bs.block:get_block

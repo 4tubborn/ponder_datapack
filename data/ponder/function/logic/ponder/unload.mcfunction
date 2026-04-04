@@ -1,9 +1,13 @@
 #被schedule执行，位置在世界出生点（基本在overworld的0,0附近）
 
+
+
 #清理ponder维度
-scoreboard players set #success ponder.debug 0
-execute in ponder:ponder store result score #success ponder.debug run fill 0 0 0 20 20 20 air
+#scoreboard players set #success ponder.debug 0
+execute in ponder:ponder run fill -4 -4 -4 16 16 16 air
 #tellraw @a ["success: ",{score:{name:"#success",objective:"ponder.debug"}}]
+
+execute in ponder:ponder run kill @e[type=!player,distance=0..]
 
 #kill @n[type=text_display,tag=ponder.camera]
 #清除相机
