@@ -1,4 +1,4 @@
-data modify entity @n[type=text_display,tag=ponder.init,tag=ponder.anim.text.top_right] {} merge value \
+data modify entity @s {} merge value \
 {\
     transformation:{\
         translation:[0,0,0],\

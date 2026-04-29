@@ -1,4 +1,4 @@
-say multi_scene
+#say multi_scene
 
 data remove storage ponder:scene cur_scene
 data modify storage ponder:scene cur_scene set from storage ponder:scene scene[0]

@@ -17,7 +17,7 @@ data modify storage ponder:anim cur_block_hide.direction set from storage ponder
 
 #tellraw @a [{text:"cur_block: ",color:"red"},{storage:"ponder:anim",nbt:"cur_block_hide"}]
 
-tellraw @a ["hide: ",{storage:"ponder:anim",nbt:"cur_block_hide"}]
+#tellraw @a ["hide: ",{storage:"ponder:anim",nbt:"cur_block_hide"}]
 
 function ponder:logic/world/block/anim/hide/summon with storage ponder:anim cur_block_hide
 

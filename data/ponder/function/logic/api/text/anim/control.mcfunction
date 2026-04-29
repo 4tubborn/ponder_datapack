@@ -1,13 +1,13 @@
 #tellraw @a {storage:"ponder:scene",nbt:"text.duration"}
 
-tellraw @a ["text in stor: ",{storage:"ponder:logic",nbt:"text",color:"red"}]
+#tellraw @a ["text in stor: ",{storage:"ponder:logic",nbt:"text",color:"red"}]
 
 #生成文本组件到storage
 data remove storage ponder:logic text.buffered_text
 function ponder:logic/text/anim/control/text
 execute unless data storage ponder:logic text.buffered_text run data modify storage ponder:logic text.buffered_text set value [{text:""}]
 
-tellraw @a ["text buffer: ",{storage:"ponder:logic",nbt:"text.buffered_text",color:"green"}]
+#tellraw @a ["text buffer: ",{storage:"ponder:logic",nbt:"text.buffered_text",color:"green"}]
 
 function ponder:logic/text/anim/control/summon with storage ponder:logic text
 #淡入

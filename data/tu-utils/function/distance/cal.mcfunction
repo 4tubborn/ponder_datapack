@@ -15,7 +15,7 @@ scoreboard players operation #distance_unit_sum tu-utils.tmp = #unit_vec.x tu-ut
 scoreboard players operation #distance_unit_sum tu-utils.tmp += #unit_vec.y tu-utils.out
 scoreboard players operation #distance_unit_sum tu-utils.tmp += #unit_vec.z tu-utils.out
 
-tellraw @a ["comp: ",{score:{name:"#distance_comp_sum",objective:"tu-utils.tmp"}}," unit: ",{score:{name:"#distance_unit_sum",objective:"tu-utils.tmp"}}]
+#tellraw @a ["comp: ",{score:{name:"#distance_comp_sum",objective:"tu-utils.tmp"}}," unit: ",{score:{name:"#distance_unit_sum",objective:"tu-utils.tmp"}}]
 
 execute if score #distance_unit_sum tu-utils.tmp matches ..10 run return fail
 

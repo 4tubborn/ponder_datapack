@@ -1,6 +1,6 @@
-advancement revoke @s only ponder:process/clock
+advancement revoke @s only ponder:process/tick
 
-function ponder:logic/world/player/stick
+
 #execute if score #enabled ponder.timer matches 1 run scoreboard players add #timer ponder.timer 1
 #say tick
 
@@ -26,9 +26,16 @@ run function ponder:logic/world/block/anim/hide/interpolate
 execute as \
 @e[tag=ponder.scene_entity,tag=ponder.anim.hide,tag=!ponder.init,type=block_display,scores={ponder.timer=0}] \
 positioned as @s run function ponder:logic/world/block/anim/hide/remove
-#
-execute as @e[tag=ponder.scene_entity,tag=ponder.anim.text.offset,tag=!ponder.init,type=text_display,scores={ponder.timer=0}] positioned as @s run function ponder:logic/text/anim/offset/interpolate_fade_out
-#
+
+#text: offset
+execute as \
+@e[tag=ponder.scene_entity,tag=ponder.anim.text.offset,tag=!ponder.init,type=text_display,scores={ponder.timer.in=0}] \
+positioned as @s run function ponder:logic/text/anim/offset/interpolate_fade_in
+execute as \
+@e[tag=ponder.scene_entity,tag=ponder.anim.text.offset,tag=!ponder.init,type=text_display,scores={ponder.timer=0}] \
+positioned as @s run function ponder:logic/text/anim/offset/interpolate_fade_out
+
+#text: top_right，反正只有一个就直接schedule了
 execute as @e[tag=ponder.scene_entity,tag=ponder.anim.text.top_right,tag=!ponder.init,type=text_display,scores={ponder.timer=0}] positioned as @s run function ponder:logic/text/anim/top_right/interpolate_fade_out
 
 #text: control
@@ -44,5 +51,6 @@ positioned as @s run function ponder:logic/text/anim/control/interpolate_fade_ou
 execute as \
 @e[tag=ponder.scene_entity,tag=ponder.anim.text.control,tag=!ponder.init,type=text_display,scores={ponder.timer.out=0}] \
 positioned as @s run function ponder:logic/text/anim/control/remove
-#
+
+#outline
 execute as @e[tag=ponder.scene_entity,tag=ponder.anim.outline,tag=!ponder.init,type=item_display,scores={ponder.timer=0}] run function ponder:logic/world/block/anim/outline/remove

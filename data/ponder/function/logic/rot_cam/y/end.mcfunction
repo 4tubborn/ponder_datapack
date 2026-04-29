@@ -1,0 +1,1 @@
+kill @n[type=text_display,tag=ponder.rot_cam.anchor,distance=0..]

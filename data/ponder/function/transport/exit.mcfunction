@@ -1,5 +1,5 @@
 #执行者为玩家，在ponder维度
-say exit
+#say exit
 
 tag @s remove ponder.in_ponder
 tp @s @e[type=marker,tag=ponder.origin_pos,limit=1]
@@ -17,18 +17,17 @@ kill @e[type=marker,tag=ponder.origin_pos,limit=1]
 
 #防止触发tick检测
 advancement grant @s only ponder:process/next
-advancement grant @s only ponder:process/clock
+advancement grant @s only ponder:process/tick
+advancement grant @s only ponder:process/second
 #清除schedule
 schedule clear ponder:logic/ponder/load
 schedule clear ponder:logic/ponder/init/
 schedule clear ponder:process/init/_
-
-schedule clear ponder:logic/text/anim/interpolate_fade_in
-schedule clear ponder:logic/text/anim/interpolate_fade_out
-schedule clear ponder:logic/text/anim/remove
+#防止继续触发
+advancement grant @s only ponder:logic/rot_cam_x
+advancement grant @s only ponder:logic/rot_cam_y
 
 schedule clear ponder:logic/world/block/anim/hide/interpolate
-schedule clear ponder:logic/world/block/anim/outline/interpolate
 schedule clear ponder:logic/world/block/anim/show/interpolate
 
 schedule clear ponder:process/scene/single/cmd/idle/reset

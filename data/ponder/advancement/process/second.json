@@ -1,0 +1,24 @@
+{
+    "criteria": {
+        "tick":{
+            "trigger": "location",
+            "conditions": {
+                "player": [
+                    {
+                        "condition": "entity_properties",
+                        "entity": "this",
+                        "predicate": {
+                            "nbt": {
+                                "Tags":["ponder.in_ponder"]
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [["tick"]],
+    "rewards": {
+        "function": "ponder:logic/clock/second"
+    }
+}

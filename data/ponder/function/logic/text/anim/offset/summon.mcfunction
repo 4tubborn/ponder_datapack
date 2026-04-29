@@ -1,4 +1,4 @@
-say summoned TEXT DISPLAY!!!!!!!!!!!!!!!!!!!!!!
+#say summoned TEXT DISPLAY!!!!!!!!!!!!!!!!!!!!!!
 $execute positioned 0.0 0.0 0.0 run summon text_display ~$(x) ~$(y) ~$(z) {\
     Tags:["ponder.scene_entity","ponder.init","ponder.anim.text.offset"],\
     text:$(text),\
@@ -16,7 +16,8 @@ $execute positioned 0.0 0.0 0.0 run summon block_display ~$(x) ~$(y) ~$(z) {\
     transformation:{translation:[0.0f,0.0f,0.0f],left_rotation:[0f,0f,0f,1f],scale:[0.01f,0.01f,0.01f],right_rotation:[0f,0f,0f,1f]}\
 }
 
-say offsetttttttttttttttttttttttttttttttttttttttttttt
+scoreboard players set @e[tag=ponder.init,tag=ponder.anim.text.offset,limit=2] ponder.timer.in 4
+
 
 #rotate @n[type=text_display,tag=ponder.anim.text.offset] facing entity @p[tag=ponder.in_ponder] eyes
 

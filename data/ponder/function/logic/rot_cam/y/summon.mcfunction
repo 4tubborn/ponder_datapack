@@ -1,0 +1,2 @@
+summon text_display 2 1 2 {Tags:["ponder.scene_entity","ponder.rot_cam.y.anchor"]}
+rotate @n[type=text_display,tag=ponder.rot_cam.y.anchor,distance=0..] facing entity @n[type=text_display,tag=ponder.camera]

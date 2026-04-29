@@ -1,4 +1,4 @@
-say base_plate_small
+#say base_plate_small
 
 function ponder:builtin_preset/block/base_plate_small
 

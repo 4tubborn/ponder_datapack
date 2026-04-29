@@ -40,4 +40,5 @@ execute if data storage ponder:scene {cur_cmd:{type:"hide_section"}} run return 
 #execute if data storage ponder:scene {cur_cmd:{type:"showIndependentSection"}} run return run function ponder:process/scene/single/cmd/idle/
 #execute if data storage ponder:scene {cur_cmd:{type:"makeSectionIndependent"}} run return run function ponder:process/scene/single/cmd/idle/
 execute if data storage ponder:scene {cur_cmd:{type:"scaleSceneView"}} run return run function ponder:process/scene/single/cmd/idle/
-execute if data storage ponder:scene {cur_cmd:{type:"rotateCamera"}} run return run function ponder:process/scene/single/cmd/idle/
+execute if data storage ponder:scene {cur_cmd:{type:"rotate_camera_y"}} run return run function ponder:process/scene/single/cmd/rotate_camera_y/
+execute if data storage ponder:scene {cur_cmd:{type:"rotate_camera_x"}} run return run function ponder:process/scene/single/cmd/rotate_camera_x/

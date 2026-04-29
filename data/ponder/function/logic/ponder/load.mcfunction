@@ -6,17 +6,18 @@ tag @a[tag=ponder.in_ponder] remove ponder.load
 #重置计时器
 advancement grant @a[tag=ponder.in_ponder] only ponder:process/next
 
-tellraw @a [{color:"green",text:"====================================="}]
+#tellraw @a [{color:"green",text:"====================================="}]
 
 scoreboard players set @a[tag=ponder.in_ponder] ponder.timer 0
 
 scoreboard players set #cur ponder.group 0
 data remove storage ponder:logic group
 
-say load
+#say load
 #ponder维度初始化
 execute in ponder:ponder positioned 0.0 0.0 0.0 run function ponder:logic/ponder/init/
-advancement revoke @a[tag=ponder.in_ponder] only ponder:process/clock
+advancement revoke @a[tag=ponder.in_ponder] only ponder:process/tick
+advancement revoke @a[tag=ponder.in_ponder] only ponder:process/second
 
 #scoreboard players set #enabled ponder.timer 1
 #scoreboard players set #timer ponder.timer 0

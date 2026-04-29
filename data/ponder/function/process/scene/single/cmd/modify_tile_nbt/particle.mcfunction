@@ -4,3 +4,4 @@ $clone $(x) $(y) $(z) $(x) $(y) $(z) -5 -5 -5
 $setblock $(x) $(y) $(z) air destroy
 execute as @n[type=item,distance=0..] unless data entity @s Tags run kill @s
 $clone -5 -5 -5 -5 -5 -5 $(x) $(y) $(z)
+setblock -5 -5 -5 air

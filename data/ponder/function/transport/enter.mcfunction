@@ -1,4 +1,4 @@
-say enter
+#say enter
 
 #存储进入前的位置
 summon marker ~ ~ ~ {Tags:["ponder.origin_pos"],UUID:[I;116117,111112,0,1]}
@@ -10,7 +10,8 @@ forceload add ~ ~
 function ponder:logic/world/player/gamemode/store
 
 #传送到ponder维度
-execute in ponder:ponder run tp @s 0.0 0.0 0.0
+execute in ponder:ponder run tp @s 0.0 256 0.0
+gamemode spectator
 
 tag @s add ponder.load
 #后续处理，等待1tick，保证ponder维度被加载
