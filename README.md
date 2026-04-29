@@ -1,8 +1,9 @@
 # Ponder
 ## Features
-* ponder
+* Add ponder features.
 
 ## Tutorials
+* Check out wiki page.
 
 ## Dependencies
 * [umath-datapack](https://pan.baidu.com/s/1i1L6IWsTDVC0B9li6zX-SA?pwd=dtkq)

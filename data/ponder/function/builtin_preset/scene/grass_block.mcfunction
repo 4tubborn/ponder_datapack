@@ -12,9 +12,8 @@ data modify storage ponder:index scene."grass_block" set value [\
         {type:"modify_block",x:1,y:1,z:1,block:"oak_shelf",show_particle:true},\
         {type:"idle",duration:20},\
         {type:"show_control",x:1,y:2,z:2,right_click:true},\
-        {type:"show_text",x:1,y:1,z:2,text:{text:"对着展示框右键可以放置物品！"},duration:30},\
+        {type:"show_text",x:1,y:1,z:2,text:{text:"Hello, world!"},duration:100},\
         {type:"idle",duration:10},\
-        {type:"show_text",x:4,y:2,z:2,text:{text:"对着展示框！"},duration:30},\
         {type:"idle",duration:50},\
         {type:"modify_tile_nbt",x:1,y:1,z:1,operation:"Items[] set value {id:\"music_disc_cat\",count:1,Slot:0}",show_particle:true},\
         {type:"idle",duration:20},\
