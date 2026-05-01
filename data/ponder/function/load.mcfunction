@@ -20,11 +20,11 @@ execute in ponder:ponder run forceload add 0 0
 
 gamerule max_command_sequence_length 1048576
 
-advancement grant @a only ponder:process/next
-advancement grant @a only ponder:process/clock
+#advancement grant @a only ponder:process/next
+#advancement grant @a only ponder:process/tick
+
 
 execute unless score #auto_save ponder.const matches 0..1 run scoreboard players set #auto_save ponder.const 1
 
 #register
-execute if score #auto_save ponder.const matches 0 run return fail
-function #ponder:register/scene
+execute if score #auto_save ponder.const matches 1 run function #ponder:register/scene

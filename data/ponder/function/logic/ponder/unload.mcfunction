@@ -7,7 +7,7 @@
 execute in ponder:ponder run fill -4 -4 -4 16 16 16 air
 #tellraw @a ["success: ",{score:{name:"#success",objective:"ponder.debug"}}]
 
-execute in ponder:ponder run kill @e[type=!player,distance=0..]
+execute in ponder:ponder run tp @e[type=!player,distance=0..] 0 -127 0
 
 #kill @n[type=text_display,tag=ponder.camera]
 #清除相机

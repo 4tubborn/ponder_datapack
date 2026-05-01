@@ -5,7 +5,6 @@ advancement revoke @s only ponder:process/tick
 #say tick
 
 
-
 #初始化完毕的bde,tde,ide倒计时
 scoreboard players remove @e[tag=ponder.scene_entity,tag=!ponder.init,scores={ponder.timer=1..},type=#ponder:scene_entity] ponder.timer 1
 scoreboard players remove @e[tag=ponder.scene_entity,tag=!ponder.init,scores={ponder.timer.in=1..},type=#ponder:scene_entity] ponder.timer.in 1

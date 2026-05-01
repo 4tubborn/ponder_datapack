@@ -32,7 +32,14 @@ forceload add 0 0
 
 #相机实体
 summon text_display -2 5.5 -2 {Tags:["ponder.camera","ponder.init"],Rotation:[-45,45],UUID:[I;116117,99097,0,1]}
-#spectate 1c595-1-8319-0-1 @p[tag=ponder.in_ponder]
+
+#用于获取block
+#"1b5ef-0-0-1-7f3c00000000" po,,bl,
+summon item_display ~ ~ ~ {\
+    transformation:{translation:[0,0,0],left_rotation:[0f,0f,0f,1f],scale:[0f,0f,0f],right_rotation:[0f,0f,0f,1f]},\
+    Tags:["ponder.scene_entity","ponder.item_getter"],\
+    UUID:[I;112111,0,98108,0]\
+}
 #debug
 scoreboard players set #unlock_movement ponder.debug 0
 

@@ -1,4 +1,4 @@
-execute if data storage ponder:logic {text:{left_click:true}} run return run data modify storage ponder:logic text.buffered_text append value {text:"\u004E",font:"ponder:ponder"}
-execute if data storage ponder:logic {text:{middle_click:true}} run return run data modify storage ponder:logic text.buffered_text append value {text:"\u004F",font:"ponder:ponder"}
-execute if data storage ponder:logic {text:{right_click:true}} run return run data modify storage ponder:logic text.buffered_text append value {text:"\u0050",font:"ponder:ponder"}
-execute if data storage ponder:logic text.sprite run return run function ponder:logic/text/anim/control/text_item
+execute if data storage ponder:logic {text:{left_click:true}} run data modify storage ponder:logic text.buffered_text append value {text:"\u004E",font:"ponder:ponder"}
+execute if data storage ponder:logic {text:{middle_click:true}} run data modify storage ponder:logic text.buffered_text append value {text:"\u004F",font:"ponder:ponder"}
+execute if data storage ponder:logic {text:{right_click:true}} run data modify storage ponder:logic text.buffered_text append value {text:"\u0050",font:"ponder:ponder"}
+execute if data storage ponder:logic text.sprite run function ponder:logic/text/anim/control/text_item
