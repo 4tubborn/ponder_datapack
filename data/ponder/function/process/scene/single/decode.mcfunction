@@ -29,7 +29,7 @@ execute if data storage ponder:scene {cur_cmd:{type:"create_item_entity"}} run r
 execute if data storage ponder:scene {cur_cmd:{type:"create_entity"}} run return run function ponder:process/scene/single/cmd/create_entity/
 #selector:<目标选择器>
 execute if data storage ponder:scene {cur_cmd:{type:"remove_entity"}} run return run function ponder:process/scene/single/cmd/remove_entity/ with storage ponder:scene cur_cmd
-#selector:<目标选择器>,operation:<string>（与data modify entity ~ ~ ~ 后的内容相同）
+#selector:<目标选择器>,operation:<string>（与data modify entity @s 后的内容相同）
 execute if data storage ponder:scene {cur_cmd:{type:"modify_entity"}} run return run function ponder:process/scene/single/cmd/modify_entity/ with storage ponder:scene cur_cmd
 #blocks:[]{x:<int>,y:<int>,z:<int>},*direction:<string>方向
 execute if data storage ponder:scene {cur_cmd:{type:"hide_section"}} run return run function ponder:process/scene/single/cmd/hide_section/
