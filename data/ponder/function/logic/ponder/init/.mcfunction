@@ -1,6 +1,6 @@
 #execute unless dimension ponder:ponder run say unless
 #若不在ponder维度则到下一tick，（一般来说transport/enter调用后会进入ponder维度，但有时不会及时进入）
-#execute unless dimension ponder:ponder run return run schedule function ponder:logic/ponder/init/ 1t
+execute unless loaded ~ ~ ~ run return run schedule function ponder:logic/ponder/init/ 1t
 execute in ponder:ponder run tp @e[type=!player,tag=!ponder.origin_pos,distance=0..] 0 -120 0
 
 #execute in ponder:ponder run kill @e[type=!player,tag=!ponder.origin_pos,distance=0..]
@@ -42,7 +42,6 @@ summon item_display ~ ~ ~ {\
 }
 #debug
 scoreboard players set #unlock_movement ponder.debug 0
-
 
 # 初始化并清空旧的方块列表
 data remove storage ponder:logic block_show

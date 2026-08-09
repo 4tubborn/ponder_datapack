@@ -31,5 +31,5 @@ schedule clear ponder:logic/world/block/anim/hide/interpolate
 schedule clear ponder:logic/world/block/anim/show/interpolate
 
 schedule clear ponder:process/scene/single/cmd/idle/reset
-#后续处理ponder维度，执行位置在世界出生点（比如overworld）
+#后续处理ponder维度，执行位置在世界出生点（overworld）
 schedule function ponder:logic/ponder/unload 1t
