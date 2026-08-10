@@ -31,5 +31,4 @@
 ## Acknowledgements
 
 * [9riton365](https://github.com/Triton365/BlockState): Provides a giant loot table that extracts the blockstate data of the block at the called location.
-
 * [伊桑/Underline](http://underline.icu/): Provides large number compution.
