@@ -1,4 +1,4 @@
-#被schedule执行，位置在世界出生点（基本在overworld的0,0附近）
+#被schedule执行，位置在世界出生点（在overworld的0,0附近）
 #玩家tag
 tag @a[tag=ponder.load] add ponder.in_ponder
 tag @a[tag=ponder.in_ponder] remove ponder.load

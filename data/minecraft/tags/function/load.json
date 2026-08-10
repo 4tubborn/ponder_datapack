@@ -1,6 +1,7 @@
 {
     "values": [
         "ponder:load",
-        "tu-utils:load"
+        "tu-utils:load",
+        "u.math:__load__"
     ]
 }

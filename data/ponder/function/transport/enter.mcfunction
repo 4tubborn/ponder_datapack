@@ -14,5 +14,5 @@ execute in ponder:ponder run tp @s 0.0 256 0.0
 gamemode spectator
 
 tag @s add ponder.load
-#后续处理，等待1tick，保证ponder维度被加载
+#后续处理，等待1tick，也没法保证ponder维度被加载
 schedule function ponder:logic/ponder/load 1t

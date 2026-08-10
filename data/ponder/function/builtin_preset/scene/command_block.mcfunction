@@ -18,6 +18,7 @@ data modify storage ponder:index scene."command_block" set value [\
         {type:"hide_section",blocks:[{x:2,y:2,z:1}]},\
         {type:"idle",duration:3},\
         {type:"hide_section",blocks:[{x:2,y:3,z:1}]},\
+        {type:"rotate_camera",x:3,y:0,z:3,yaw:60,pitch:10},\
     ]\
 ]
 

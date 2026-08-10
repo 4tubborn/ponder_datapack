@@ -1,0 +1,20 @@
+scoreboard players operation quat_p.scaler u.variable = quat_p.x u.variable
+scoreboard players operation quat_p.scaler u.variable *= quat_p.x u.variable
+scoreboard players operation #t2 u.variable = quat_p.y u.variable
+scoreboard players operation #t2 u.variable *= quat_p.y u.variable
+scoreboard players operation #t3 u.variable = quat_p.z u.variable
+scoreboard players operation #t3 u.variable *= quat_p.z u.variable
+scoreboard players operation #t4 u.variable = quat_p.w u.variable
+scoreboard players operation #t4 u.variable *= quat_p.w u.variable
+scoreboard players operation quat_p.scaler u.variable += #t2 u.variable
+scoreboard players operation quat_p.scaler u.variable += #t3 u.variable
+scoreboard players operation quat_p.scaler u.variable += #t4 u.variable
+function u.math:quat_p.scaler/__sqrt
+scoreboard players operation quat_p.x u.variable *= #10000 u.constant
+scoreboard players operation quat_p.y u.variable *= #10000 u.constant
+scoreboard players operation quat_p.z u.variable *= #10000 u.constant
+scoreboard players operation quat_p.w u.variable *= #10000 u.constant
+scoreboard players operation quat_p.x u.variable /= quat_p.scaler u.variable
+scoreboard players operation quat_p.y u.variable /= quat_p.scaler u.variable
+scoreboard players operation quat_p.z u.variable /= quat_p.scaler u.variable
+scoreboard players operation quat_p.w u.variable /= quat_p.scaler u.variable

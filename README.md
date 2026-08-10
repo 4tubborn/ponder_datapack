@@ -1,18 +1,21 @@
 # Ponder
-## Features
-* Add ponder features.
 
-## Tutorials
-* Check out wiki page.
+## Features
+
+* Add ponder features in data pack.
 
 ## Dependencies
 
-## Datapacks
-* [Umath Datapack](https://pan.baidu.com/s/1i1L6IWsTDVC0B9li6zX-SA?pwd=dtkq) (Required)
-* [BlockState](https://github.com/Triton365/BlockState/releases) (Required) Choose 1.21.9 and extract it. Ensure in the folder there is a `data` folder and a `pack.mcmeta` file.
+### Resourcepacks
 
-## Resourcepacks
-* [Ponder Datapack Resourcepack](https://github.com/4tubborn/ponder_datapack-resourcepack) (Required)
+* [Ponder Datapack Resourcepack](https://modrinth.com/project/2KbvhGJ3) (Required)
 
-## Links
-* [UNDERLINE](https://underline.icu/) - collects tutorials and datapack libraries.
+## Tutorial
+
+* See [wiki pages](https://github.com/4tubborn/ponder_datapack/wiki).
+
+## Acknowledgements
+
+* [9riton365](https://github.com/Triton365/BlockState): Provides a giant loot table that extracts the blockstate data of the block at the called location.
+
+* [伊桑/Underline](http://underline.icu/): Provides large number compution.

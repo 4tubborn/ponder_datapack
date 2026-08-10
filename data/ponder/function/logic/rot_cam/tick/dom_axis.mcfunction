@@ -1,0 +1,2 @@
+execute if score #abs_yaw ponder.scene.cam_rot > #abs_pitch ponder.scene.cam_rot run return run scoreboard players set #dom_axis ponder.scene.cam_rot 0
+scoreboard players set #dom_axis ponder.scene.cam_rot 1

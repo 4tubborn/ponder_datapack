@@ -18,20 +18,12 @@ function ponder:logic/ponder/init/restore_gamerule with storage ponder:tmp
 #强加载，一直强加载直到exit
 forceload add 0 0
 
-#shadow_area
-#forceload add 0 -100
-#summon marker 0 0 -100 {Tags:["ponder.shadow_area.anchor"],UUID:[I;116117,115097,0,1]}
-
-
-
-#清除shadow_area
-#fill 0 0 -100 16 16 -90 air
-
-
 #execute if entity 1c595-1-c199-0-1 run say summoned marker
 
 #相机实体
-summon text_display -2 5.5 -2 {Tags:["ponder.camera","ponder.init"],Rotation:[-45,45],UUID:[I;116117,99097,0,1]}
+summon text_display -2 5.5 -2 {Tags:["ponder.camera","ponder.init"],Rotation:[-45,45],UUID:[I;116117,99097,0,1],interpolation_duration:1}
+#相机旋转锚点
+summon text_display 0 0 0 {Tags:["ponder.rot_cam.anchor"],UUID:[I;116117,97110,0,1],interpolation_duration:1}
 
 #用于获取block
 #"1b5ef-0-0-1-7f3c00000000" po,,bl,

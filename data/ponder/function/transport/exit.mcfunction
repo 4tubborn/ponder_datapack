@@ -19,6 +19,7 @@ kill @e[type=marker,tag=ponder.origin_pos,limit=1]
 advancement grant @s only ponder:process/next
 advancement grant @s only ponder:process/tick
 advancement grant @s only ponder:process/second
+advancement grant @s only ponder:logic/rot_cam
 #清除schedule
 schedule clear ponder:logic/ponder/load
 schedule clear ponder:logic/ponder/init/

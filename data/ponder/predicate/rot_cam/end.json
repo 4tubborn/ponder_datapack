@@ -1,0 +1,33 @@
+{
+    "condition": "all_of",
+    "terms": [
+        {
+            "condition": "value_check",
+            "value": {
+                "type": "score",
+                "score": "ponder.scene.cam_rot",
+                "target": {
+                    "type": "fixed",
+                    "name": "#total_yaw"
+                }
+            },
+            "range": {
+                "min": -5,"max": 5
+            }
+        },
+        {
+            "condition": "value_check",
+            "value": {
+                "type": "score",
+                "score": "ponder.scene.cam_rot",
+                "target": {
+                    "type": "fixed",
+                    "name": "#total_pitch"
+                }
+            },
+            "range": {
+                "min": -5,"max": 5
+            }
+        }
+    ]
+}

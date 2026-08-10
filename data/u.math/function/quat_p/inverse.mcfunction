@@ -1,0 +1,21 @@
+scoreboard players operation #t1 u.variable = quat_p.x u.variable
+scoreboard players operation #t1 u.variable *= quat_p.x u.variable
+scoreboard players operation #t2 u.variable = quat_p.y u.variable
+scoreboard players operation #t2 u.variable *= quat_p.y u.variable
+scoreboard players operation #t3 u.variable = quat_p.z u.variable
+scoreboard players operation #t3 u.variable *= quat_p.z u.variable
+scoreboard players operation #t4 u.variable = quat_p.w u.variable
+scoreboard players operation #t4 u.variable *= quat_p.w u.variable
+scoreboard players operation #t1 u.variable += #t2 u.variable
+scoreboard players operation #t1 u.variable += #t3 u.variable
+scoreboard players operation #t1 u.variable += #t4 u.variable
+scoreboard players add #t1 u.variable 5000
+scoreboard players operation #t1 u.variable /= #10000 u.constant
+scoreboard players operation quat_p.x u.variable *= #-10000 u.constant
+scoreboard players operation quat_p.y u.variable *= #-10000 u.constant
+scoreboard players operation quat_p.z u.variable *= #-10000 u.constant
+scoreboard players operation quat_p.w u.variable *= #10000 u.constant
+scoreboard players operation quat_p.x u.variable /= #t1 u.variable
+scoreboard players operation quat_p.y u.variable /= #t1 u.variable
+scoreboard players operation quat_p.z u.variable /= #t1 u.variable
+scoreboard players operation quat_p.w u.variable /= #t1 u.variable

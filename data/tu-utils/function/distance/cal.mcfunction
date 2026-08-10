@@ -24,7 +24,6 @@ scoreboard players operation y u.variable = #distance_unit_sum tu-utils.tmp
 
 function u.math:x/mult_1000_div_y
 
-
 scoreboard players operation #distance tu-utils.out = x u.variable
 
 return 1

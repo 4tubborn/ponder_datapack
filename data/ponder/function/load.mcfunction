@@ -12,9 +12,16 @@ scoreboard objectives add ponder.utils.tmp dummy
 scoreboard objectives add ponder.group dummy
 scoreboard objectives add ponder.timer.in dummy
 scoreboard objectives add ponder.timer.out dummy
+scoreboard objectives add ponder.scene.cam_rot dummy
 
 #3位小数
 scoreboard players set #scale_multiplier ponder.const 600
+scoreboard players set #cam.elastic_coefficient ponder.const 1
+scoreboard players set #cam.damping_coefficient ponder.const 11
+#x10
+scoreboard players set #cam.max_speed ponder.const 200
+#rot cam(2*sin(x))
+scoreboard players set #k_ratio ponder.const 1818
 
 execute in ponder:ponder run forceload add 0 0
 
