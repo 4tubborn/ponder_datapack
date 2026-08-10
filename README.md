@@ -10,9 +10,23 @@
 
 * [Ponder Datapack Resourcepack](https://modrinth.com/project/2KbvhGJ3) (Required)
 
-## Tutorial
+## Usage
 
-* See [wiki pages](https://github.com/4tubborn/ponder_datapack/wiki).
+### Start
+
+* Press `sprint` and `sneak` while holding grass blocks, command blocks or end rods to enter built-in ponders.
+
+### Halt
+
+* Press `sprint` and `sneak`.
+
+### Create on Your Own
+
+* See Development section.
+
+## Development
+
+* See [wiki pages](https://github.com/4tubborn/ponder_datapack/wiki) for developer guide.
 
 ## Acknowledgements
 

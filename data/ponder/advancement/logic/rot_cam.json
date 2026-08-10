@@ -1,7 +1,15 @@
 {
     "criteria": {
         "tick":{
-            "trigger": "tick"
+            "trigger": "tick",
+            "conditions": {
+                "player": [
+                    {
+                        "condition": "reference",
+                        "name": "ponder:in_ponder"
+                    }
+                ]
+            }
         }
     },
     "requirements": [["tick"]],

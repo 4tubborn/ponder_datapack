@@ -1,6 +1,4 @@
 #yaw,pitch:1e2,radius:1e3,k:1e3
-
-say 1
 execute if predicate ponder:rot_cam/end run return run function ponder:logic/rot_cam/tick/end
 #cal abs
 scoreboard players operation #abs_yaw ponder.scene.cam_rot = #total_yaw ponder.scene.cam_rot
@@ -34,7 +32,7 @@ execute store result storage ponder:macro rot_cam.step_yaw double 0.01 run score
 execute store result storage ponder:macro rot_cam.step_pitch double 0.01 run scoreboard players get #step_pitch ponder.scene.cam_rot
 execute store result storage ponder:macro rot_cam.radius double 0.001 run scoreboard players get #radius ponder.scene.cam_rot
 
-tellraw @a ["stoe: ",{storage:"ponder:macro",nbt:"rot_cam"}]
+#tellraw @a ["stor: ",{storage:"ponder:macro",nbt:"rot_cam"}]
 
 #function ponder:logic/rot_cam/tick/tp with storage ponder:macro rot_cam
 execute as 1c595-1-7b56-0-1 at @s run function ponder:logic/rot_cam/tick/tp with storage ponder:macro rot_cam
@@ -42,6 +40,6 @@ execute as 1c595-1-7b56-0-1 at @s run function ponder:logic/rot_cam/tick/tp with
 scoreboard players operation #total_yaw ponder.scene.cam_rot -= #step_yaw ponder.scene.cam_rot
 scoreboard players operation #total_pitch ponder.scene.cam_rot -= #step_pitch ponder.scene.cam_rot
 
-tellraw @a ["to yaw: ",{score:{name:"#total_yaw",objective:"ponder.scene.cam_rot"}},"to pitch: ",{score:{name:"#total_pitch",objective:"ponder.scene.cam_rot"}}]
+#tellraw @a ["remain yaw: ",{score:{name:"#total_yaw",objective:"ponder.scene.cam_rot"}},", remain pitch: ",{score:{name:"#total_pitch",objective:"ponder.scene.cam_rot"}}]
 
 advancement revoke @s only ponder:logic/rot_cam

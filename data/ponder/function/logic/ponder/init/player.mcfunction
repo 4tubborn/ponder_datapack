@@ -1,0 +1,1 @@
+execute as @p[tag=ponder.load] at @s run function ponder:logic/ponder/init/player_

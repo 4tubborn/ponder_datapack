@@ -19,18 +19,15 @@ kill @e[type=marker,tag=ponder.origin_pos,limit=1]
 advancement grant @s only ponder:process/next
 advancement grant @s only ponder:process/tick
 advancement grant @s only ponder:process/second
-advancement grant @s only ponder:logic/rot_cam
+function ponder:logic/rot_cam/tick/exit
 #清除schedule
 schedule clear ponder:logic/ponder/load
 schedule clear ponder:logic/ponder/init/
 schedule clear ponder:process/init/_
-#防止继续触发
-advancement grant @s only ponder:logic/rot_cam_x
-advancement grant @s only ponder:logic/rot_cam_y
 
 schedule clear ponder:logic/world/block/anim/hide/interpolate
 schedule clear ponder:logic/world/block/anim/show/interpolate
 
 schedule clear ponder:process/scene/single/cmd/idle/reset
-#后续处理ponder维度，执行位置在世界出生点（overworld）
-schedule function ponder:logic/ponder/unload 1t
+#后续处理ponder维度，执行维度为ponder
+function ponder:logic/ponder/unload

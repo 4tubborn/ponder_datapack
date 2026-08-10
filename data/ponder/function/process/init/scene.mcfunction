@@ -4,5 +4,3 @@ $data modify storage ponder:scene scene set from storage ponder:index scene."$(i
 
 #玩家进入ponder维度，同时初始化
 function ponder:transport/enter
-
-schedule function ponder:process/init/_ 4t

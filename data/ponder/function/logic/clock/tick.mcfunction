@@ -1,14 +1,13 @@
 advancement revoke @s only ponder:process/tick
 
-
 #execute if score #enabled ponder.timer matches 1 run scoreboard players add #timer ponder.timer 1
 #say tick
 
 
 #初始化完毕的bde,tde,ide倒计时
-scoreboard players remove @e[tag=ponder.scene_entity,tag=!ponder.init,scores={ponder.timer=1..},type=#ponder:scene_entity] ponder.timer 1
-scoreboard players remove @e[tag=ponder.scene_entity,tag=!ponder.init,scores={ponder.timer.in=1..},type=#ponder:scene_entity] ponder.timer.in 1
-scoreboard players remove @e[tag=ponder.scene_entity,tag=!ponder.init,scores={ponder.timer.out=1..},type=#ponder:scene_entity] ponder.timer.out 1
+scoreboard players remove @e[tag=ponder.scene_entity,tag=!ponder.init,scores={ponder.timer=1..},type=#ponder:scene_entity,distance=..128] ponder.timer 1
+scoreboard players remove @e[tag=ponder.scene_entity,tag=!ponder.init,scores={ponder.timer.in=1..},type=#ponder:scene_entity,distance=..128] ponder.timer.in 1
+scoreboard players remove @e[tag=ponder.scene_entity,tag=!ponder.init,scores={ponder.timer.out=1..},type=#ponder:scene_entity,distance=..128] ponder.timer.out 1
 
 #show
 execute as \

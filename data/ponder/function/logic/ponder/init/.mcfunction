@@ -1,7 +1,15 @@
 #execute unless dimension ponder:ponder run say unless
 #若不在ponder维度则到下一tick，（一般来说transport/enter调用后会进入ponder维度，但有时不会及时进入）
-execute unless loaded ~ ~ ~ run return run schedule function ponder:logic/ponder/init/ 1t
-execute in ponder:ponder run tp @e[type=!player,tag=!ponder.origin_pos,distance=0..] 0 -120 0
+stopwatch create a
+execute unless dimension ponder:ponder run return run schedule function ponder:logic/ponder/load 1t replace
+execute unless loaded ~ ~ ~ run return run schedule function ponder:logic/ponder/load 1t replace
+execute store result score #tt ponder.tmp run stopwatch query a 1000
+tellraw @a ["time: ",{score:{name:"#tt",objective:"ponder.tmp"}}]
+stopwatch remove a
+
+say init!!!!!!!!
+
+#tp @e[type=!player,tag=!ponder.origin_pos,distance=0..] 0 -200 0
 
 #execute in ponder:ponder run kill @e[type=!player,tag=!ponder.origin_pos,distance=0..]
 
@@ -40,3 +48,11 @@ data remove storage ponder:logic block_show
 data remove storage ponder:logic block_destory
 #tu-utils，用于text的大小变换
 summon marker 0.0 0.0 0.0 {Tags:["tu-utils.en"],UUID:[I;116117,0,0,1]}
+
+scoreboard players set #cur ponder.group 0
+data remove storage ponder:logic group
+
+#场地初始化好了之后再设置玩家数据
+function ponder:logic/ponder/init/player
+#开始初始化ponder加载模式（multi/single），然后触发遍历ponder api
+function ponder:process/init/_

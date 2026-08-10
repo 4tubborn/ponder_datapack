@@ -12,13 +12,8 @@
                         }
                     },
                     {
-                        "condition": "entity_properties",
-                        "entity": "this",
-                        "predicate": {
-                            "nbt": {
-                                "Tags":["ponder.in_ponder"]
-                            }
-                        }
+                        "condition": "reference",
+                        "name": "ponder:in_ponder"
                     }
                 ]
             }

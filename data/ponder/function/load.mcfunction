@@ -16,10 +16,11 @@ scoreboard objectives add ponder.scene.cam_rot dummy
 
 #3位小数
 scoreboard players set #scale_multiplier ponder.const 600
-scoreboard players set #cam.elastic_coefficient ponder.const 1
-scoreboard players set #cam.damping_coefficient ponder.const 11
+scoreboard players set #cam.elastic_coef ponder.const 16
+scoreboard players set #cam.damping_coef ponder.const 2
 #x10
-scoreboard players set #cam.max_speed ponder.const 200
+scoreboard players set #cam.max_speed ponder.const 250
+scoreboard players set #cam.max_accel ponder.const 200
 #rot cam(2*sin(x))
 scoreboard players set #k_ratio ponder.const 1818
 

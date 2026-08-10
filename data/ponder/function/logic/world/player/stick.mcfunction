@@ -1,6 +1,6 @@
-execute unless dimension ponder:ponder run return fail
-execute unless loaded ~ ~ ~ run return fail
 execute if score #unlock_movement ponder.debug matches 1 run return fail
+#execute unless dimension ponder:ponder run return fail
+#execute unless loaded ~ ~ ~ run return fail
 
 #tellraw @a ["unlock: ",{score:{name:"#unlock_movement",objective:"ponder.debug"}}]
 
