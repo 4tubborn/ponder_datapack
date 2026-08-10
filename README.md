@@ -2,7 +2,7 @@
 
 ## Features
 
-* Add ponder features in data pack.
+* Use easy-to-use key-value pair APIs to build your own ponder scenes!
 
 ## Dependencies
 
