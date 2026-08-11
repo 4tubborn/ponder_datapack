@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "../../../../resourcepacks/Ponder"
+		},
+		{
+			"path": "../ponder_datapack.wiki"
 		}
 	],
 	"settings": {}

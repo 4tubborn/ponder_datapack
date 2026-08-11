@@ -7,3 +7,5 @@ summon text_display ~ ~ ~ {\
     transformation:{translation:[0f,0f,0f],left_rotation:[0f,0f,0f,1f],scale:[0f,0f,0f],right_rotation:[0f,0f,0f,1f]}\
 }
 data modify entity @n[type=text_display,tag=ponder.init,tag=ponder.anim.text.top_right] text set from storage ponder:logic text.text
+
+#tellraw @a ["text: ",{entity:"@n[type=text_display,tag=ponder.init,tag=ponder.anim.text.top_right]",nbt:"transformation.scale"}]

@@ -9,4 +9,5 @@ data modify entity @s {} merge value \
     background:-16777216,\
 }
 
-tag @n[type=text_display,tag=ponder.init,tag=ponder.anim.text.top_right] remove ponder.init
+scoreboard players reset @s ponder.timer.in
+say fade_in
