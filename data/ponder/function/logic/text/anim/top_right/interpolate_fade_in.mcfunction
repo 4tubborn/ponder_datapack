@@ -10,4 +10,3 @@ data modify entity @s {} merge value \
 }
 
 scoreboard players reset @s ponder.timer.in
-say fade_in

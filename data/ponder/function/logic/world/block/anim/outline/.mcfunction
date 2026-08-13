@@ -1,5 +1,3 @@
-
-
 #say show_outline
 
 execute unless data storage ponder:logic outline.scale run data modify storage ponder:logic outline.scale set value [1,1,1]

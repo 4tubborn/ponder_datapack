@@ -1,0 +1,1 @@
+advancement grant @s only ponder:logic/scal_cam

@@ -1,0 +1,19 @@
+{
+    "criteria": {
+        "tick":{
+            "trigger": "tick",
+            "conditions": {
+                "player": [
+                    {
+                        "condition": "reference",
+                        "name": "ponder:in_ponder"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [["tick"]],
+    "rewards": {
+        "function": "ponder:logic/scal_cam/tick/main"
+    }
+}

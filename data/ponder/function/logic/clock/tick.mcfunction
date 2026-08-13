@@ -33,7 +33,7 @@ execute as \
 @e[tag=ponder.scene_entity,tag=ponder.anim.text.offset,tag=!ponder.init,type=text_display,scores={ponder.timer=0}] \
 positioned as @s run function ponder:logic/text/anim/offset/interpolate_fade_out
 
-#text: top_right，反正只有一个就直接schedule了
+#text: top_right
 execute as @e[tag=ponder.scene_entity,tag=ponder.anim.text.top_right,tag=!ponder.init,type=text_display,scores={ponder.timer.in=0}] positioned as @s run function ponder:logic/text/anim/top_right/interpolate_fade_in
 execute as @e[tag=ponder.scene_entity,tag=ponder.anim.text.top_right,tag=!ponder.init,type=text_display,scores={ponder.timer=0}] positioned as @s run function ponder:logic/text/anim/top_right/interpolate_fade_out
 

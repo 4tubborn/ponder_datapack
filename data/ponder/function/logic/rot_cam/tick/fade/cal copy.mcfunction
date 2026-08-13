@@ -11,7 +11,7 @@ scoreboard players operation #accel ponder.scene.cam_rot = #cam.max_accel ponder
 scoreboard players operation #accel ponder.scene.cam_rot *= #f ponder.tmp
 scoreboard players operation #accel ponder.scene.cam_rot /= #100 tu-utils.num
 
-tellraw @a ["accel: ",{score:{name:"#accel",objective:"ponder.scene.cam_rot"}}]
+#tellraw @a ["accel: ",{score:{name:"#accel",objective:"ponder.scene.cam_rot"}}]
 #非最终停止时保底a=0.01
 execute if score #accel ponder.scene.cam_rot matches ..0 if score #p ponder.tmp matches 5.. run scoreboard players set #accel ponder.scene.cam_rot 1
 #v_new=v_old+a

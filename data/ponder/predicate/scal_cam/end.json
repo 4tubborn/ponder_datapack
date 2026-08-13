@@ -1,0 +1,19 @@
+{
+    "condition": "all_of",
+    "terms": [
+        {
+            "condition": "value_check",
+            "value": {
+                "type": "score",
+                "score": "ponder.scene.cam_scal",
+                "target": {
+                    "type": "fixed",
+                    "name": "#remaining_radius"
+                }
+            },
+            "range": {
+                "min": -5,"max": 5
+            }
+        }
+    ]
+}

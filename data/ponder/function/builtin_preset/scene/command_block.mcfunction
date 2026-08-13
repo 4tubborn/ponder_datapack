@@ -11,18 +11,21 @@ data modify storage ponder:index scene."command_block" set value [\
         {type:"idle",duration:3},\
         {type:"set_block",block:{block_state:{Name:"diamond_block",Properties:{}},x:2,y:3,z:1}},\
         {type:"show_section"},\
-        {type:"show_outline",x:2,y:1,z:1,duration:500},\
+        {type:"show_outline",x:2,y:1,z:1,duration:20},\
         {type:"idle",duration:40},\
         {type:"hide_section",blocks:[{x:2,y:1,z:1}],direction:"down"},\
         {type:"idle",duration:3},\
         {type:"hide_section",blocks:[{x:2,y:2,z:1}]},\
         {type:"idle",duration:3},\
         {type:"hide_section",blocks:[{x:2,y:3,z:1}]},\
+        {type:"idle",duration:5},\
+        {type:"show_text",x:1,y:1,z:2,text:{text:"你好"},duration:40,mode:"top_right"},\
+        {type:"idle",duration:25},\
+        {type:"scale_camera",radius:4,add:true},\
         {type:"rotate_camera",x:3,y:0,z:3,yaw:60,pitch:0},\
         {type:"show_text",x:1,y:1,z:2,text:{text:"Hello, world!"},duration:100},\
     ]\
 ]
 
-#        {type:"rotate_camera_y",angle:90},\
-        {type:"idle",duration:80},\
-        {type:"rotate_camera_x",angle:90},
+#{type:"rotate_camera",x:3,y:0,z:3,yaw:60,pitch:0},
+#{type:"scale_camera",radius:1,add:true},

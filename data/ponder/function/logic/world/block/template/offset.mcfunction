@@ -1,1 +1,0 @@
-$execute positioned ~$(x) ~$(y) ~$(z) summon marker run function ponder:util/block/template/get_pos

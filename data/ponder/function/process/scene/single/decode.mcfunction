@@ -39,7 +39,8 @@ execute if data storage ponder:scene {cur_cmd:{type:"hide_section"}} run return 
 #execute if data storage ponder:scene {cur_cmd:{type:"showSectionAndMerge"}} run return run function ponder:process/scene/single/cmd/idle/
 #execute if data storage ponder:scene {cur_cmd:{type:"showIndependentSection"}} run return run function ponder:process/scene/single/cmd/idle/
 #execute if data storage ponder:scene {cur_cmd:{type:"makeSectionIndependent"}} run return run function ponder:process/scene/single/cmd/idle/
-#execute if data storage ponder:scene {cur_cmd:{type:"scaleSceneView"}} run return run function ponder:process/scene/single/cmd/idle/
+#radius:<float>,add:<bool>
+execute if data storage ponder:scene {cur_cmd:{type:"scale_camera"}} run return run function ponder:process/scene/single/cmd/scale_camera/
 #x,y,z,yaw,pitch
 execute if data storage ponder:scene {cur_cmd:{type:"rotate_camera"}} run return run function ponder:process/scene/single/cmd/rotate_camera/
 #run:命令

@@ -1,9 +1,8 @@
-#execute if predicate {condition:"entity_properties",entity:"this",predicate:{type_specific:{type:"player",looking_at:{distance:{horizontal:0}}}}} run return run say 1
-#say no
-scoreboard players set #total_yaw ponder.scene.cam_rot 6000
-scoreboard players set #total_pitch ponder.scene.cam_rot 1000
-scoreboard players set #radius ponder.scene.cam_rot 7000
+#计算距离
+tag 1c595-1-7b56-0-1 add tu-utils.distance_anchor1
+tag 1c595-1-8319-0-1 add tu-utils.distance_anchor2
+function tu-utils:distance/cal
+#半径为距离
+scoreboard players operation #radius ponder.scene.cam_rot = #distance tu-utils.out
 
-summon text_display 3 1 3 {Tags:["ponder.anchor"]}
-rotate @n[tag=ponder.anchor] facing entity @n[tag=ponder.camera]
-advancement revoke @s only ponder:logic/rot_cam
+tellraw @a ["r: ",{score:{name:"#radius",objective:"ponder.scene.cam_rot"}}]
