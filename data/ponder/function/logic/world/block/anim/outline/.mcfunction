@@ -2,6 +2,11 @@
 
 execute unless data storage ponder:logic outline.scale run data modify storage ponder:logic outline.scale set value [1,1,1]
 execute unless data storage ponder:logic outline.color run data modify storage ponder:logic outline.color set value 0
+
+data modify storage ponder:logic outline.x set from storage ponder:logic outline.pos[0]
+data modify storage ponder:logic outline.y set from storage ponder:logic outline.pos[1]
+data modify storage ponder:logic outline.z set from storage ponder:logic outline.pos[2]
+
 function ponder:logic/world/block/anim/outline/_ with storage ponder:logic outline
 
 execute unless data storage ponder:logic outline.duration run data modify storage ponder:logic outline.duration set value 20

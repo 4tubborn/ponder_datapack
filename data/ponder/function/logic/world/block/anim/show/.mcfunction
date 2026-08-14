@@ -1,11 +1,12 @@
 data remove storage ponder:anim cur_block_show
 data modify storage ponder:anim cur_block_show set from storage ponder:anim buffer.block_show[0]
 
-#初始变换
-execute unless data storage ponder:anim cur_block_show run return run \
-scoreboard players set @e[tag=ponder.scene_entity,tag=ponder.anim.show,tag=ponder.init,type=block_display] ponder.timer.in 4
-
+execute unless data storage ponder:anim cur_block_show run return 1
 data remove storage ponder:anim buffer.block_show[0]
+#其实可以在set_block(s)时就处理好，但这样的话set_blocks又要写一个递归了，索性在show时处理
+data modify storage ponder:anim cur_block_show.x set from storage ponder:anim cur_block_show.pos[0]
+data modify storage ponder:anim cur_block_show.y set from storage ponder:anim cur_block_show.pos[1]
+data modify storage ponder:anim cur_block_show.z set from storage ponder:anim cur_block_show.pos[2]
 
 execute unless data storage ponder:anim cur_block_show.state run data modify storage ponder:anim cur_block_show.state set value "[]"
 

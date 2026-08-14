@@ -4,5 +4,4 @@ function ponder:logic/world/block/anim/hide/
 
 data remove storage ponder:logic block_hide
 
-execute as @e[tag=ponder.scene_entity,tag=ponder.anim.hide,tag=ponder.init,type=block_display] run scoreboard players set @s ponder.timer 7
-tag @e[tag=ponder.scene_entity,tag=ponder.anim.hide,tag=ponder.init,type=block_display] remove ponder.init
+execute as @e[tag=ponder.scene_entity,tag=ponder.anim.hide,tag=ponder.init,type=block_display] run function ponder:logic/world/block/anim/hide/set

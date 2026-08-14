@@ -1,0 +1,1 @@
+kill @n[type=item,distance=0..,tag=!ponder.summoned_entity]

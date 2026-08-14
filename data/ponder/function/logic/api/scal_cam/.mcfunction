@@ -5,4 +5,4 @@ scoreboard players operation #total_radius ponder.scene.cam_scal = #remaining_ra
 #启动
 advancement revoke @p[tag=ponder.in_ponder] only ponder:logic/scal_cam
 
-say scale
+#say scale

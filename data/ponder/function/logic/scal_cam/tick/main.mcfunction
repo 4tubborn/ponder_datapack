@@ -10,4 +10,4 @@ execute as 1c595-1-7b56-0-1 at @s run function ponder:logic/scal_cam/tick/tp wit
 scoreboard players operation #remaining_radius ponder.scene.cam_scal -= #step_radius ponder.scene.cam_scal
 advancement revoke @s only ponder:logic/scal_cam
 
-say tick
+#say tick

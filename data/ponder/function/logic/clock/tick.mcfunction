@@ -25,6 +25,14 @@ execute as \
 @e[tag=ponder.scene_entity,tag=ponder.anim.hide,tag=!ponder.init,type=block_display,scores={ponder.timer=0}] \
 positioned as @s run function ponder:logic/world/block/anim/hide/remove
 
+#move
+execute as \
+@e[tag=ponder.scene_entity,tag=ponder.anim.move,tag=!ponder.init,type=block_display,scores={ponder.timer.in=0}] \
+run function ponder:logic/world/block/anim/move/interpolate
+execute as \
+@e[tag=ponder.scene_entity,tag=ponder.anim.move,tag=!ponder.init,type=block_display,scores={ponder.timer=0}] \
+positioned as @s run function ponder:logic/world/block/anim/move/solidify/
+
 #text: offset
 execute as \
 @e[tag=ponder.scene_entity,tag=ponder.anim.text.offset,tag=!ponder.init,type=text_display,scores={ponder.timer.in=0}] \
@@ -34,8 +42,10 @@ execute as \
 positioned as @s run function ponder:logic/text/anim/offset/interpolate_fade_out
 
 #text: top_right
-execute as @e[tag=ponder.scene_entity,tag=ponder.anim.text.top_right,tag=!ponder.init,type=text_display,scores={ponder.timer.in=0}] positioned as @s run function ponder:logic/text/anim/top_right/interpolate_fade_in
-execute as @e[tag=ponder.scene_entity,tag=ponder.anim.text.top_right,tag=!ponder.init,type=text_display,scores={ponder.timer=0}] positioned as @s run function ponder:logic/text/anim/top_right/interpolate_fade_out
+execute as @e[tag=ponder.scene_entity,tag=ponder.anim.text.top_right,tag=!ponder.init,type=text_display,scores={ponder.timer.in=0}] \
+positioned as @s run function ponder:logic/text/anim/top_right/interpolate_fade_in
+execute as @e[tag=ponder.scene_entity,tag=ponder.anim.text.top_right,tag=!ponder.init,type=text_display,scores={ponder.timer=0}] \
+positioned as @s run function ponder:logic/text/anim/top_right/interpolate_fade_out
 
 #text: control
 #淡入

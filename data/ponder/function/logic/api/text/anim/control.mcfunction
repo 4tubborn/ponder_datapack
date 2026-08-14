@@ -15,7 +15,7 @@ schedule function ponder:logic/text/anim/control/interpolate_fade_in 4t append
 scoreboard players set @n[tag=ponder.scene_entity,tag=ponder.init,type=text_display,tag=ponder.anim.text.control] ponder.timer.in 4
 #淡出通过tick实现
 execute unless data storage ponder:logic text.duration run data modify storage ponder:logic text.duration set value 50
-execute as @n[tag=ponder.scene_entity,tag=ponder.init,type=text_display,tag=ponder.anim.text.control] store result score @s ponder.timer run data get storage ponder:logic text.duration
+execute store result score @n[tag=ponder.scene_entity,tag=ponder.init,type=text_display,tag=ponder.anim.text.control] ponder.timer run data get storage ponder:logic text.duration
 tag @n[tag=ponder.init,type=text_display,tag=ponder.anim.text.control] remove ponder.init
 #tellraw @a ["score: ",{score:{name:"@n[tag=ponder.scene_entity,tag=ponder.init,type=text_display]",objective:"ponder.timer"}}]
 

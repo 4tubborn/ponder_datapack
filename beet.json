@@ -8,7 +8,8 @@
     "beet.contrib.minify_function",
     "beet.contrib.minify_json",
     "py_scripts.merge_multiline",
-    "beet.contrib.render"
+    "beet.contrib.render",
+    "py_scripts.generate.generate_checkerboard"
   ],
   "meta": {
     "render_json": {
