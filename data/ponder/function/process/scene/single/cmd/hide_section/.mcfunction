@@ -6,7 +6,6 @@ data remove storage ponder:utils input.direction.string
 data modify storage ponder:utils input.direction.string set from storage ponder:scene cur_cmd.direction
 execute unless data storage ponder:scene cur_cmd.direction run data modify storage ponder:utils input.direction.string set value "up"
 
-
 function ponder:logic/api/utils/direction/string_to_vec_norm
 data modify storage ponder:logic block_hide.direction set from storage ponder:utils output.direction.vec
 

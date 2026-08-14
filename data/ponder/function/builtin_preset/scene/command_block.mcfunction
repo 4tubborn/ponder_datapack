@@ -2,7 +2,7 @@ data modify storage ponder:index scene."command_block" set value [\
     [\
         {type:"show_base_plate"},\
         {type:"idle",duration:10},\
-        {type:"create_entity",x:0,y:1,z:4,id:"creeper"},\
+        {type:"create_entity",pos:[0,1,4],id:"creeper"},\
         {type:"set_block",block:{block_state:{Name:"diamond_block",Properties:{}},pos:[2,1,1]}},\
         {type:"show_section",direction:"down"},\
         {type:"idle",duration:3},\
@@ -19,6 +19,7 @@ data modify storage ponder:index scene."command_block" set value [\
         {type:"idle",duration:3},\
         {type:"hide_section",blocks:[[2,3,1]]},\
         {type:"idle",duration:5},\
+        {type:"create_item_entity",pos:[0,1,1],item:{id:"glass"},motion:"up"},\
         {type:"show_text",x:1,y:1,z:2,text:{text:"你好"},duration:40,mode:"top_right"},\
         {type:"idle",duration:25},\
         {type:"scale_camera",radius:4,add:true},\

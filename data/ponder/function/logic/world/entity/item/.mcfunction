@@ -1,1 +1,1 @@
-$summon item $(x) $(y) $(z) {Item:$(item),Tags:["scene.summoned_entity"]}
+$summon item $(x) $(y) $(z) $(nbt)
