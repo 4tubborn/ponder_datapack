@@ -78,50 +78,62 @@ dispatch ponder:action[idle] to struct IdleAction {
 	duration: int @ 1..,
 }
 
-/// Show a normal size of checkerboard
-dispatch ponder:action[show_base_plate] to struct {
+/// Shows a normal size of checkerboard
+dispatch ponder:action[show_base_plate] to struct E {
 }
 
+/// Shows a small size of checkerboard
 dispatch ponder:action[show_base_plate_small] to struct {
 }
 
+/// Shows a large size of checkerboard
 dispatch ponder:action[show_base_plate_large] to struct {
 }
 
+/// Pushes one block into display list
 dispatch ponder:action[set_block] to struct {
   block: SetSingleBlock,
 }
 
+/// Pushes blocks into display list
 dispatch ponder:action[set_blocks] to struct {
   blocks: [SetSingleBlock],
 }
 
+/// Shows all blocks in display list and clear display list
 dispatch ponder:action[show_section] to struct {
+  /// The direction that blocks will go to
   direction?: Direction,
 }
 
 dispatch ponder:action[modify_block] to struct {
   pos: Vec3i,
   //TODO
+  /// Format: block_id[state]{nbt}
   block: string,
   //#[id=block]
+  /// Whether show breaking particles
   show_particle?: boolean,
 }
 
 dispatch ponder:action[modify_tile_nbt] to struct {
   pos: Vec3i,
   //TODO
+  /// data modify block ~ ~ ~ ...
   operation: string,
+  /// Whether show breaking particles
   show_particle?: boolean,
 }
 
 
-//TODO，要修复offset/top_right
+//TODO, need fix offset/top_right optional fields
 dispatch ponder:action[show_text] to struct {
   mode?: ("offset"|"top_right"),
   duration?: int @ 1..,
   text: Text,
+  /// Required for offset mode
   pos?: Vec3d,
+  /// The offset extended from the position
   offset?: double,
 }
 
@@ -135,9 +147,13 @@ dispatch ponder:action[show_outline] to struct {
 dispatch ponder:action[show_control] to struct {
   pos: Vec3d,
   duration?: int @ 1..,
+  /// Whether show a right click icon
   right_click?: boolean,
+  /// Whether show a left click icon
   left_click?: boolean,
+  /// Whether show a middle click icon
   middle_click?: boolean,
+  /// Shows a sprite
   sprite?: #[id="texture"] string,
 }
 
@@ -152,6 +168,7 @@ dispatch ponder:action[create_entity] to struct {
   id: #[id=entity_type] string,
   //TODO
   nbt?: struct{[string]:any},
+  /// Controls the entity's NoAI NBT, with higher priority than the nbt field
   no_ai?: boolean,
 }
 
@@ -162,16 +179,20 @@ dispatch ponder:action[remove_entity] to struct {
 dispatch ponder:action[modify_entity] to struct {
   selector: #[entity(amount="single",type="entities")] string,
   //TODO
+  /// data modify entity @n ...
   operation: string,
 }
 
 dispatch ponder:action[hide_section] to struct {
   blocks: [Vec3i],
+  /// The direction that blocks will go to
   direction?: Direction,
 }
 
 dispatch ponder:action[move_section] to struct {
   blocks: [Vec3i],
+  /// The direction that blocks will go to
+  direction?: Direction,
   duration?: int @ 1..,
 }
 
@@ -181,6 +202,7 @@ dispatch ponder:action[scale_camera] to struct {
 }
 
 dispatch ponder:action[rotate_camera] to struct {
+  /// The center of rotation, with the distance between the position and the player as radius
   pos: Vec3d,
   yaw?: double @ -360..360,
   pitch?: double @ -360..360,

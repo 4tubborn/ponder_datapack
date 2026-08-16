@@ -6,6 +6,10 @@
 
 ## Dependencies
 
+### Datapacks
+
+* [BookShelf Block Module](https://modrinth.com/project/JTQNFXZm) (Required)
+
 ### Resourcepacks
 
 * [Ponder Datapack Resourcepack](https://modrinth.com/project/2KbvhGJ3) (Required)
@@ -20,13 +24,9 @@
 
 * Press `sprint` and `sneak`.
 
-### Create on Your Own
-
-* See Development section.
-
 ## Development
 
-* See [wiki pages](https://github.com/4tubborn/ponder_datapack/wiki) for developer guide.
+* See [wiki pages](https://github.com/4tubborn/ponder_datapack/wiki) for developer guide and create your own scenes.
 
 ## Acknowledgements
 
