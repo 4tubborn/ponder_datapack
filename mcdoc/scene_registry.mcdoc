@@ -4,6 +4,7 @@ use ::java::util::BlockState
 use ::java::util::color::RGB
 use ::java::util::text::Text
 use ::java::world::item::ItemStack
+use ::java::world::item::ItemStackTemplate
 
 dispatch minecraft:storage[ponder:index] to struct PonderSceneIndex {
   scene: struct {
@@ -36,7 +37,7 @@ enum(string) EPonderActionType {
 }
 
 type Vec3d = [double] @ 3
-type Vec3i = [int] @ 3
+type Vec3i = int[] @ 3
 
 enum(string) EDirection {
   North = "north",
@@ -64,7 +65,8 @@ struct SetSingleBlock {
   block_state: BlockState,
   pos: Vec3i,
   //TODO
-  state?: #[block_state(properties=true)] string,
+  /// List format of block states
+  state?: #[match_regex="^\\[(([a-z0-9_]+=[a-z0-9_]+,)*[a-z0-9_]+=[a-z0-9_]+,?)?\\]$"] string,
   //mcdoc:block_states[[block_state.Name]]
 }
 
@@ -74,7 +76,7 @@ struct PonderAction {
 }
 
 dispatch ponder:action[idle] to struct IdleAction {
-  /// Ticks that will delay
+  /// Delay duration in ticks
 	duration: int @ 1..,
 }
 
@@ -92,16 +94,19 @@ dispatch ponder:action[show_base_plate_large] to struct {
 
 /// Pushes one block into display list
 dispatch ponder:action[set_block] to struct {
+  /// Block position
   block: SetSingleBlock,
 }
 
 /// Pushes blocks into display list
 dispatch ponder:action[set_blocks] to struct {
+  /// A list of block positions
   blocks: [SetSingleBlock],
 }
 
 /// Shows all blocks in display list and clear display list
 dispatch ponder:action[show_section] to struct {
+  // Default: down
   /// The direction that blocks will go to
   direction?: Direction,
 }
@@ -112,6 +117,7 @@ dispatch ponder:action[modify_block] to struct {
   /// Format: block_id[state]{nbt}
   block: string,
   //#[id=block]
+  // Default: false
   /// Whether show breaking particles
   show_particle?: boolean,
 }
@@ -121,54 +127,85 @@ dispatch ponder:action[modify_tile_nbt] to struct {
   //TODO
   /// data modify block ~ ~ ~ ...
   operation: string,
+  // Default: false
   /// Whether show breaking particles
   show_particle?: boolean,
 }
 
-
-//TODO, need fix offset/top_right optional fields
 dispatch ponder:action[show_text] to struct {
+  // Default: offset
   mode?: ("offset"|"top_right"),
+  // Default: 30
   duration?: int @ 1..,
   text: Text,
-  /// Required for offset mode
-  pos?: Vec3d,
-  /// The offset extended from the position
-  offset?: double,
+  ...ponder:text[[mode]],
 }
+
+  // Extra fields when mode:offset
+  dispatch ponder:text[offset, %none] to struct {
+    pos: Vec3d,
+    // Default: 3
+    /// The offset extended from the position
+    offset?: double,
+  }
+  // Extra fields when mode:top_right
+  dispatch ponder:text[top_right] to struct {
+
+  }
 
 dispatch ponder:action[show_outline] to struct {
   pos: Vec3d,
+  // Default: 20
   duration?: int @ 1..,
+  // Default: [1,1,1]
   scale?: Vec3d,
+  // Default: 0
+  /// Format Red<<16 + Green<<8 + Blue or [<R>,<G>,<B> @ 0..1]
   color?: RGB,
 }
 
 dispatch ponder:action[show_control] to struct {
   pos: Vec3d,
+  // Default: 50
   duration?: int @ 1..,
+  // Default: false
   /// Whether show a right click icon
   right_click?: boolean,
+  // Default: false
   /// Whether show a left click icon
   left_click?: boolean,
+  // Default: false
   /// Whether show a middle click icon
   middle_click?: boolean,
+  // Default: <empty>
   /// Shows a sprite
   sprite?: #[id="texture"] string,
 }
 
+// Summoned entity will have "ponder.summoned_entity" tag
 dispatch ponder:action[create_item_entity] to struct {
   pos: Vec3d,
-  item: ItemStack,
+  // Default: {}
+  nbt?: minecraft:entity[item],
+  // Spyglass has bugs when handling #[canonical]: 
+  //  1. The priority of #[canonical] is even higher than #[since] and #[until].
+  //  2. The struct marked #[canonical] in union type, the actually canonical field will not be struct.
+  // For example, In ItemStackTemplate (#[canonical] ItemStack | #[since="26.1"] string), the auto-complete suggests string.
+  /// Controls the item entity's Item NBT, with higher priority than the field of nbt
+  item: ItemStackTemplate,
+  // Default: none
+  /// Controls the item entity's Motion NBT, with higher priority than the field of nbt
   motion?: DirectionMotion,
 }
 
+// Summoned entity will have "ponder.summoned_entity" tag
 dispatch ponder:action[create_entity] to struct {
   pos: Vec3d,
   id: #[id=entity_type] string,
-  //TODO
-  nbt?: struct{[string]:any},
-  /// Controls the entity's NoAI NBT, with higher priority than the nbt field
+  // Default: {}
+  nbt?: minecraft:entity[[id]],
+  // Default: true
+  /// Controls the entity's NoAI NBT, with higher priority than the field of nbt
   no_ai?: boolean,
 }
 
@@ -185,26 +222,34 @@ dispatch ponder:action[modify_entity] to struct {
 
 dispatch ponder:action[hide_section] to struct {
   blocks: [Vec3i],
+  // Default: down
   /// The direction that blocks will go to
   direction?: Direction,
 }
 
 dispatch ponder:action[move_section] to struct {
   blocks: [Vec3i],
+  // Default: up
   /// The direction that blocks will go to
   direction?: Direction,
+  // Default: 7
   duration?: int @ 1..,
 }
 
 dispatch ponder:action[scale_camera] to struct {
   radius: double @ -50..50,
+  // Default: false
   add?: boolean,
 }
 
+// The `rotate_camera` will override active `rotate_camera` process.
 dispatch ponder:action[rotate_camera] to struct {
-  /// The center of rotation, with the distance between the position and the player as radius
+  // With the distance between the position and the player as radius
+  /// The center of rotation
   pos: Vec3d,
+  // Default: 0
   yaw?: double @ -360..360,
+  // Default: 0
   pitch?: double @ -360..360,
 }
 

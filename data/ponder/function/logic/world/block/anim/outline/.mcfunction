@@ -7,7 +7,7 @@ data modify storage ponder:logic outline.x set from storage ponder:logic outline
 data modify storage ponder:logic outline.y set from storage ponder:logic outline.pos[1]
 data modify storage ponder:logic outline.z set from storage ponder:logic outline.pos[2]
 
-function ponder:logic/world/block/anim/outline/_ with storage ponder:logic outline
+function ponder:logic/world/block/anim/outline/summon with storage ponder:logic outline
 
 execute unless data storage ponder:logic outline.duration run data modify storage ponder:logic outline.duration set value 20
 execute store result score @n[type=item_display,tag=ponder.init,tag=ponder.anim.outline] ponder.timer run data get storage ponder:logic outline.duration

@@ -11,7 +11,7 @@ execute if data storage ponder:scene {cur_cmd:{type:"set_block"}} run return run
 #blocks[]:{block_state:{Name:"",*Properties:{}},pos[3],*state:<string>}
 execute if data storage ponder:scene {cur_cmd:{type:"set_blocks"}} run return run function ponder:process/scene/single/cmd/set_blocks/
 
-#*direction<string>：方向，放置set_block(s)的方块
+#*direction<string>：方向，放置set_block(s)的方块,%default=down
 execute if data storage ponder:scene {cur_cmd:{type:"show_section"}} run return run function ponder:process/scene/single/cmd/show_section/
 #pos[3],block:<string>，格式为<block_id>*[<block_state>]*{block_entity}，即与setblock ~ ~ ~ 后的内容相同。*show_particle:<bool>，是否显示破坏粒子
 execute if data storage ponder:scene {cur_cmd:{type:"modify_block"}} run return run function ponder:process/scene/single/cmd/modify_block/
@@ -35,7 +35,7 @@ execute if data storage ponder:scene {cur_cmd:{type:"remove_entity"}} run return
 execute if data storage ponder:scene {cur_cmd:{type:"modify_entity"}} run return run function ponder:process/scene/single/cmd/modify_entity/ with storage ponder:scene cur_cmd
 #blocks:[][x,y,z],*direction:<string>方向
 execute if data storage ponder:scene {cur_cmd:{type:"hide_section"}} run return run function ponder:process/scene/single/cmd/hide_section/
-#blocks:[][x,y,z],direction:<direction>,*duration:<int>默认7t
+#blocks:[][x,y,z],direction:<direction>,*duration:<int>默认7
 execute if data storage ponder:scene {cur_cmd:{type:"move_section"}} run return run function ponder:process/scene/single/cmd/move_section/
 #execute if data storage ponder:scene {cur_cmd:{type:"rotateSection"}} run return run function
 #execute if data storage ponder:scene {cur_cmd:{type:"showIndependentSection"}} run return run function ponder:process/scene/single/cmd/idle/

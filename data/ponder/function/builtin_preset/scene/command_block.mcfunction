@@ -19,7 +19,7 @@ data modify storage ponder:index scene."command_block" set value [\
         {type:"idle",duration:3},\
         {type:"hide_section",blocks:[[2,3,1]]},\
         {type:"idle",duration:5},\
-        {type:"create_item_entity",pos:[0,1,1],item:{id:"glass"},motion:"up"},\
+        {type:"create_item_entity",pos:[0,1,1],item:{id:"acacia_boat"},motion:"up"},\
         {type:"show_text",text:{text:"你好"},duration:40,mode:"top_right"},\
         {type:"idle",duration:25},\
         {type:"scale_camera",radius:4,add:true},\
