@@ -4,6 +4,7 @@ execute if data storage ponder:utils {input:{direction:{string:"north"}}} run re
 execute if data storage ponder:utils {input:{direction:{string:"south"}}} run return run data modify storage ponder:utils output.direction.vec set value [0,0,0.3]
 execute if data storage ponder:utils {input:{direction:{string:"east"}}} run return run data modify storage ponder:utils output.direction.vec set value [0.3,0,0]
 execute if data storage ponder:utils {input:{direction:{string:"west"}}} run return run data modify storage ponder:utils output.direction.vec set value [-0.3,0,0]
+execute if data storage ponder:utils {input:{direction:{string:"none"}}} run return run data modify storage ponder:utils output.direction.vec set value [0,0,0]
 #如果不是[]形式就变成[0,0,0]
 execute unless data storage ponder:utils input.direction.string[] run return run data modify storage ponder:utils output.direction.vec set value [0,0,0]
 #[]形式会原样保留

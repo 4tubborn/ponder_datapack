@@ -1,0 +1,191 @@
+use ::java::util::BlockState
+//use ::java::util::direction::Direction
+//use ::java::util::direction::VerticalDirection
+use ::java::util::color::RGB
+use ::java::util::text::Text
+use ::java::world::item::ItemStack
+
+dispatch minecraft:storage[ponder:index] to struct PonderSceneIndex {
+  scene: struct {
+    [string]: ( [PonderAction] | [[PonderAction]] )
+  },
+}
+
+enum(string) EPonderActionType {
+  Idle = "idle",
+  ShowBasePlate = "show_base_plate",
+  ShowBasePlateSmall = "show_base_plate_small",
+  ShowBasePlateLarge = "show_base_plate_large",
+  SetBlock = "set_block",
+  SetBlocks = "set_blocks",
+  ShowSection = "show_section",
+  ModifyBlock = "modify_block",
+  ModifyTileNbt = "modify_tile_nbt",
+  ShowText = "show_text",
+  ShowOutline = "show_outline",
+  ShowControl = "show_control",
+  CreateItemEntity = "create_item_entity",
+  CreateEntity = "create_entity",
+  RemoveEntity = "remove_entity",
+  ModifyEntity = "modify_entity",
+  HideSection = "hide_section",
+  MoveSection = "move_section",
+  ScaleCamera = "scale_camera",
+  RotateCamera = "rotate_camera",
+  RunCommand = "run_command",
+}
+
+type Vec3d = [double] @ 3
+type Vec3i = [int] @ 3
+
+enum(string) EDirection {
+  North = "north",
+  South = "south",
+  West = "west",
+  East = "east",
+  Up = "up",
+  Down = "down",
+}
+
+enum(string) EDirectionMotion {
+  North = "north",
+  South = "south",
+  West = "west",
+  East = "east",
+  Up = "up",
+  Down = "down",
+  None = "none",
+}
+
+type Direction = ( #[canonical] EDirection | Vec3d )
+type DirectionMotion = ( #[canonical] EDirectionMotion | Vec3d )
+
+struct SetSingleBlock {
+  block_state: BlockState,
+  pos: Vec3i,
+  //TODO
+  state?: #[block_state(properties=true)] string,
+  //mcdoc:block_states[[block_state.Name]]
+}
+
+struct PonderAction {
+	type: EPonderActionType,
+	...ponder:action[[type]],
+}
+
+dispatch ponder:action[idle] to struct IdleAction {
+  /// Ticks that will delay
+	duration: int @ 1..,
+}
+
+/// Show a normal size of checkerboard
+dispatch ponder:action[show_base_plate] to struct {
+}
+
+dispatch ponder:action[show_base_plate_small] to struct {
+}
+
+dispatch ponder:action[show_base_plate_large] to struct {
+}
+
+dispatch ponder:action[set_block] to struct {
+  block: SetSingleBlock,
+}
+
+dispatch ponder:action[set_blocks] to struct {
+  blocks: [SetSingleBlock],
+}
+
+dispatch ponder:action[show_section] to struct {
+  direction?: Direction,
+}
+
+dispatch ponder:action[modify_block] to struct {
+  pos: Vec3i,
+  //TODO
+  block: string,
+  //#[id=block]
+  show_particle?: boolean,
+}
+
+dispatch ponder:action[modify_tile_nbt] to struct {
+  pos: Vec3i,
+  //TODO
+  operation: string,
+  show_particle?: boolean,
+}
+
+
+//TODO，要修复offset/top_right
+dispatch ponder:action[show_text] to struct {
+  mode?: ("offset"|"top_right"),
+  duration?: int @ 1..,
+  text: Text,
+  pos?: Vec3d,
+  offset?: double,
+}
+
+dispatch ponder:action[show_outline] to struct {
+  pos: Vec3d,
+  duration?: int @ 1..,
+  scale?: Vec3d,
+  color?: RGB,
+}
+
+dispatch ponder:action[show_control] to struct {
+  pos: Vec3d,
+  duration?: int @ 1..,
+  right_click?: boolean,
+  left_click?: boolean,
+  middle_click?: boolean,
+  sprite?: #[id="texture"] string,
+}
+
+dispatch ponder:action[create_item_entity] to struct {
+  pos: Vec3d,
+  item: ItemStack,
+  motion?: DirectionMotion,
+}
+
+dispatch ponder:action[create_entity] to struct {
+  pos: Vec3d,
+  id: #[id=entity_type] string,
+  //TODO
+  nbt?: struct{[string]:any},
+  no_ai?: boolean,
+}
+
+dispatch ponder:action[remove_entity] to struct {
+  selector: #[entity(type="entities")] string
+}
+
+dispatch ponder:action[modify_entity] to struct {
+  selector: #[entity(amount="single",type="entities")] string,
+  //TODO
+  operation: string,
+}
+
+dispatch ponder:action[hide_section] to struct {
+  blocks: [Vec3i],
+  direction?: Direction,
+}
+
+dispatch ponder:action[move_section] to struct {
+  blocks: [Vec3i],
+  duration?: int @ 1..,
+}
+
+dispatch ponder:action[scale_camera] to struct {
+  radius: double @ -50..50,
+  add?: boolean,
+}
+
+dispatch ponder:action[rotate_camera] to struct {
+  pos: Vec3d,
+  yaw?: double @ -360..360,
+  pitch?: double @ -360..360,
+}
+
+dispatch ponder:action[run_command] to struct {
+  run: #[command] string,
+}

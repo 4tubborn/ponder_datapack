@@ -1,4 +1,4 @@
-tag @n[tag=ponder.in_ponder,type=player] add tu-utils.distance_anchor1
+tag @p[tag=ponder.in_ponder] add tu-utils.distance_anchor1
 tag @n[tag=ponder.init,type=text_display,tag=ponder.anim.text.control] add tu-utils.distance_anchor2
 function tu-utils:distance/cal
 #tellraw @a ["distance: ",{score:{name:"#distance",objective:"tu-utils.out"}}]

@@ -1,4 +1,3 @@
-
 #text
 data modify storage ponder:anim text set value {\
     transformation:{\

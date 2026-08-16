@@ -2,6 +2,7 @@
 
 #tellraw @a ["text in stor: ",{storage:"ponder:logic",nbt:"text",color:"red"}]
 
+function ponder:logic/text/anim/xyz
 #生成文本组件到storage
 data remove storage ponder:logic text.buffered_text
 function ponder:logic/text/anim/control/text

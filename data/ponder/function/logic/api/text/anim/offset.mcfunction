@@ -2,7 +2,7 @@
 
 #tellraw @a ["text in stor: ",{storage:"ponder:logic",nbt:"text",color:"green"}]
 
-
+function ponder:logic/text/anim/xyz
 #say duration
 
 execute unless data storage ponder:logic text.offset run data modify storage ponder:logic text.offset set value 3

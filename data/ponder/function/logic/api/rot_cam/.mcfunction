@@ -6,6 +6,10 @@ execute store result score #total_pitch ponder.scene.cam_rot run data get storag
 scoreboard players operation #init_yaw ponder.scene.cam_rot = #total_yaw ponder.scene.cam_rot
 scoreboard players operation #init_pitch ponder.scene.cam_rot = #total_pitch ponder.scene.cam_rot
 
+data modify storage ponder:logic rot_cam.x set from storage ponder:logic rot_cam.pos[0]
+data modify storage ponder:logic rot_cam.y set from storage ponder:logic rot_cam.pos[1]
+data modify storage ponder:logic rot_cam.z set from storage ponder:logic rot_cam.pos[2]
+
 function ponder:logic/rot_cam/set/center with storage ponder:logic rot_cam
 #计算距离
 tag 1c595-1-7b56-0-1 add tu-utils.distance_anchor1
