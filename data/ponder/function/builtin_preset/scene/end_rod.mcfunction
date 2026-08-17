@@ -1,22 +1,22 @@
 data modify storage ponder:index scene."end_rod" set value [\
     [\
+        {type:"idle",duration:3},\
         {type:"show_base_plate_small"},\
         {type:"idle",duration:20},\
         {type:"set_blocks",blocks:[\
-            {x:3,y:1,z:1,block_state:{Name:"minecraft:observer",Properties:{facing:"west"}},state:"[facing=west]"},\
-            {x:2,y:1,z:1,block_state:{Name:"minecraft:observer",Properties:{facing:"east"}},state:"[facing=east]"},\
-            {x:1,y:1,z:1,block_state:{Name:"minecraft:sticky_piston",Properties:{facing:"west"}},state:"[facing=west]"},\
-            {x:0,y:1,z:1,block_state:{Name:"minecraft:end_rod",Properties:{facing:"west"}},state:"[facing=west]"}\
+            {pos:[3,1,1],block_state:{Name:"minecraft:observer",Properties:{facing:"west"}},state:"[facing=west]"},\
+            {pos:[2,1,1],block_state:{Name:"minecraft:observer",Properties:{facing:"east"}},state:"[facing=east]"},\
+            {pos:[1,1,1],block_state:{Name:"minecraft:sticky_piston",Properties:{facing:"west"}},state:"[facing=west]"},\
+            {pos:[0,1,1],block_state:{Name:"minecraft:end_rod",Properties:{facing:"west"}},state:"[facing=west]"}\
         ]},\
         {type:"show_section"},\
         {type:"idle",duration:40},\
-        {type:"show_text",x:0,y:2,z:2,text:{text:"这是拉杆"},duration:60},\
+        {type:"show_text",pos:[0,2,2],text:{text:"这是不是拉杆"},duration:60},\
         {type:"idle",duration:20},\
-        {type:"show_text",x:2,y:2,z:2,text:{text:"右键拉杆"},duration:60},\
+        {type:"show_text",pos:[2,2,2],text:{text:"右键拉杆"},duration:60},\
         {type:"idle",duration:50},\
-        {type:"interact",x:1,y:1,z:1,interaction:"right_click"},\
         {type:"idle",duration:30},\
-        {type:"destroy_blocks",blocks:[{x:1,y:1,z:1,block_state:{Name:"minecraft:oak_door"}}]},\
+        {type:"modify_block",pos:[1,2,1],block:"short_grass"},\
         {type:"idle",duration:20}\
     ]\
 ]

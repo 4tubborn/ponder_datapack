@@ -1,2 +1,2 @@
 #executor: text, other: player
-tp @s ^ ^ ^1
+#tp @s ^ ^ ^1

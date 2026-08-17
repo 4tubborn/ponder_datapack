@@ -1,5 +1,6 @@
 data modify storage ponder:index scene."command_block" set value [\
     [\
+        {type:"idle",duration:3},\
         {type:"show_base_plate"},\
         {type:"idle",duration:10},\
         {type:"create_entity",pos:[0,1,4],id:"creeper"},\

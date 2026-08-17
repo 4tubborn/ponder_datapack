@@ -1,5 +1,6 @@
 data modify storage ponder:index scene."grass_block" set value [\
     [\  
+        {type:"idle",duration:3},\
         {type:"show_base_plate_small"},\
         {type:"idle",duration:20},\
         {type:"set_blocks",blocks:[\
@@ -22,7 +23,7 @@ data modify storage ponder:index scene."grass_block" set value [\
         {type:"create_item_entity",pos:[0,1,0],item:{id:"apple"}},\
         {type:"idle",duration:20},\
         {type:"modify_entity",selector:"@n[type=villager,distance=0..]",operation:"Age set value -24000"},\
-        {type:"show_text",text:{text:"Top right"},duration:40,grid:[1,0],mode:"top_right"},\
+        {type:"show_text",text:{text:"Right"},duration:40,grid:[1,0],mode:"top_right"},\
         {type:"idle",duration:40},\
         {type:"remove_entity",selector:"@n[type=villager,distance=0..]"},\
         {type:"show_outline",pos:[2,1,1]},\
