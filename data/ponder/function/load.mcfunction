@@ -27,8 +27,6 @@ scoreboard players set #cam.max_scaling_speed ponder.const 200
 
 execute in ponder:ponder run forceload add 0 0
 
-gamerule max_command_sequence_length 1048576
-
 #advancement grant @a only ponder:process/next
 #advancement grant @a only ponder:process/tick
 

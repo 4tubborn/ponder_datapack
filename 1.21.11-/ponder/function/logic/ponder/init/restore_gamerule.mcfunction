@@ -1,0 +1,1 @@
+$gamerule commandModificationBlockLimit $(max_block_modifications)

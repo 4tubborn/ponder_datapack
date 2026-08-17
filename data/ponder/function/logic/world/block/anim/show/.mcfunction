@@ -8,6 +8,8 @@ data modify storage ponder:anim cur_block_show.x set from storage ponder:anim cu
 data modify storage ponder:anim cur_block_show.y set from storage ponder:anim cur_block_show.pos[1]
 data modify storage ponder:anim cur_block_show.z set from storage ponder:anim cur_block_show.pos[2]
 
+execute if data storage ponder:anim cur_block_show.block_state.Properties unless data storage ponder:anim cur_block_show.state run \
+tellraw @a {color:"yellow",translate:"[Warning] API show_section : \"Properties\" is set, but \"state\" is missing."}
 execute unless data storage ponder:anim cur_block_show.state run data modify storage ponder:anim cur_block_show.state set value "[]"
 
 data modify storage ponder:anim cur_block_show.direction set from storage ponder:logic block_show.direction

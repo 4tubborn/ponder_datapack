@@ -1,0 +1,30 @@
+{
+    "criteria": {
+        "0": {
+            "trigger": "tick",
+            "conditions": {
+                "player": [
+                    {
+                        "condition": "inverted",
+                        "term": {
+                            "condition": "entity_properties",
+                            "entity": "this",
+                            "predicate": {                                
+                                "type_specific/player": {
+                                    "advancements": {
+                                        "ponder:logic/rot_cam": true,
+                                        "ponder:logic/scal_cam": true
+                                    }
+                                }                
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [["0"]],
+    "rewards": {
+        "function": "ponder:logic/clock/cam_moving"
+    }
+}
