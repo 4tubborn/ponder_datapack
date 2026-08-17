@@ -21,6 +21,7 @@ advancement grant @s only ponder:process/tick
 advancement grant @s only ponder:process/second
 function ponder:logic/rot_cam/tick/exit
 function ponder:logic/scal_cam/tick/exit
+advancement grant @s only ponder:process/cam_moving
 #清除schedule
 schedule clear ponder:logic/ponder/load
 schedule clear ponder:logic/ponder/init/

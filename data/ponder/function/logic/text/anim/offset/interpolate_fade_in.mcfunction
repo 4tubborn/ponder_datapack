@@ -6,8 +6,9 @@ function #tu-utils:get_distance
 
 #通过相似计算出text实际offset_r(offset_r/1=offset/distance)
 #tellraw @a ["offset: ",{storage:"ponder:logic",nbt:"text"}]
-
-execute store result score x u.variable run data get storage ponder:logic text.offset 1000
+#x=offset.top();offset.pop();
+execute store result score x u.variable run data get storage ponder:logic scene_buffer.text_offset.offset[0] 1000
+data remove storage ponder:logic scene_buffer.text_offset.offset[0]
 scoreboard players operation y u.variable = #distance tu-utils.out
 
 function u.math:x/mult_1000_div_y

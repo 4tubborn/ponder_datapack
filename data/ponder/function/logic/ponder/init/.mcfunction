@@ -53,7 +53,8 @@ scoreboard players set #radius ponder.scene.cam_rot 5898
 
 scoreboard players set #cur ponder.group 0
 data remove storage ponder:logic group
-
+#show_section,show_text等数据的缓冲列表
+data remove storage ponder:logic scene_buffer
 #场地初始化好了之后再设置玩家数据
 function ponder:logic/ponder/init/player
 #开始初始化ponder加载模式（multi/single），然后触发遍历ponder api

@@ -158,7 +158,8 @@ dispatch ponder:action[show_text] to struct {
   }
   // Extra fields when mode:top_right
   dispatch ponder:text[top_right] to struct {
-    // Default: [-1,0.6]
+    // Default: [1,0.6]
+    /// The crosshair is the origin. +x towards right & +y towards up
     grid?: [double] @ 2,
   }
 

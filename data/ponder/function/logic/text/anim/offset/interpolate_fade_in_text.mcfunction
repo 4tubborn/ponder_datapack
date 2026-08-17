@@ -15,10 +15,12 @@ execute store result storage ponder:anim text.transformation.translation[0] floa
 
 #tellraw @a ["nbt: ",{storage:"ponder:anim",nbt:"text"}]
 
-execute as @s run data modify entity @s {} merge from storage ponder:anim text
+data modify entity @s {} merge from storage ponder:anim text
 
 #设置位置
-execute at @p[tag=ponder.in_ponder] run tp @s ^ ^ ^1
+#此时text display在pos的位置
+execute positioned as @p[tag=ponder.in_ponder] facing entity @s feet run tp @s ^ ^ ^1
+rotate @s facing entity @p[tag=ponder.in_ponder]
 
 scoreboard players reset @s ponder.timer.in
 

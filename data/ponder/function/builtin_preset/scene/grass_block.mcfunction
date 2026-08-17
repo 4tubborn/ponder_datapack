@@ -13,6 +13,7 @@ data modify storage ponder:index scene."grass_block" set value [\
         {type:"idle",duration:20},\
         {type:"show_control",pos:[1,2,2],right_click:true},\
         {type:"show_text",pos:[1,1,2],text:{text:"Hello, world!"},duration:100},\
+        {type:"show_text",pos:[3,0,2],text:{text:"Hello, world2!"},offset:-3,duration:100},\
         {type:"idle",duration:10},\
         {type:"idle",duration:50},\
         {type:"modify_tile_nbt",pos:[1,1,1],operation:"Items[] set value {id:\"music_disc_cat\",count:1,Slot:0}",show_particle:true},\
@@ -21,7 +22,7 @@ data modify storage ponder:index scene."grass_block" set value [\
         {type:"create_item_entity",pos:[0,1,0],item:{id:"apple"}},\
         {type:"idle",duration:20},\
         {type:"modify_entity",selector:"@n[type=villager,distance=0..]",operation:"Age set value -24000"},\
-        {type:"show_text",text:{text:"注意到村民变小了"},duration:40,mode:"top_right"},\
+        {type:"show_text",text:{text:"Top right"},duration:40,grid:[1,0],mode:"top_right"},\
         {type:"idle",duration:40},\
         {type:"remove_entity",selector:"@n[type=villager,distance=0..]"},\
         {type:"show_outline",pos:[2,1,1]},\
