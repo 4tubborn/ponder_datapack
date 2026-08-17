@@ -12,8 +12,6 @@ function ponder:logic/text/anim/offset/summon with storage ponder:logic text
 #schedule function ponder:logic/text/anim/offset/interpolate_fade_in 4t append
 
 execute unless data storage ponder:logic text.duration run data modify storage ponder:logic text.duration set value 30
-execute as @n[tag=ponder.scene_entity,tag=ponder.init,type=text_display,tag=ponder.anim.text.offset] store result score @s ponder.timer run data get storage ponder:logic text.duration
 
-#tellraw @a ["score: ",{score:{name:"@n[tag=ponder.scene_entity,tag=ponder.init,type=text_display]",objective:"ponder.timer"}}]
-tag @e[tag=ponder.init,tag=ponder.anim.text.offset,limit=2] remove ponder.init
+execute as @e[tag=ponder.init,tag=ponder.anim.text.offset,limit=2] run function ponder:logic/text/anim/offset/set
 #data remove storage ponder:logic text

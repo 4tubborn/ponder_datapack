@@ -1,0 +1,2 @@
+execute as @s[scores={ponder.timer.in=0}] run return run function ponder:logic/world/block/anim/move/interpolate
+execute as @s[scores={ponder.timer=0}] positioned as @s run function ponder:logic/world/block/anim/move/solidify/

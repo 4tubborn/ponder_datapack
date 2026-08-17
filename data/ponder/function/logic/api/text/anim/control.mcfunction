@@ -11,13 +11,9 @@ execute unless data storage ponder:logic text.buffered_text run data modify stor
 #tellraw @a ["text buffer: ",{storage:"ponder:logic",nbt:"text.buffered_text",color:"green"}]
 
 function ponder:logic/text/anim/control/summon with storage ponder:logic text
-#淡入
-schedule function ponder:logic/text/anim/control/interpolate_fade_in 4t append
-scoreboard players set @n[tag=ponder.scene_entity,tag=ponder.init,type=text_display,tag=ponder.anim.text.control] ponder.timer.in 4
-#淡出通过tick实现
+
 execute unless data storage ponder:logic text.duration run data modify storage ponder:logic text.duration set value 50
-execute store result score @n[tag=ponder.scene_entity,tag=ponder.init,type=text_display,tag=ponder.anim.text.control] ponder.timer run data get storage ponder:logic text.duration
-tag @n[tag=ponder.init,type=text_display,tag=ponder.anim.text.control] remove ponder.init
+execute as @n[tag=ponder.scene_entity,tag=ponder.init,type=text_display,tag=ponder.anim.text.control] run function ponder:logic/text/anim/control/set
 #tellraw @a ["score: ",{score:{name:"@n[tag=ponder.scene_entity,tag=ponder.init,type=text_display]",objective:"ponder.timer"}}]
 
 #data remove storage ponder:logic text

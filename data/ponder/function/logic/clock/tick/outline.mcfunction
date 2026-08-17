@@ -1,0 +1,1 @@
+execute as @s[scores={ponder.timer=0}] run function ponder:logic/world/block/anim/outline/remove

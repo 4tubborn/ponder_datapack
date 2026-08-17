@@ -17,7 +17,7 @@ execute if data storage ponder:scene {cur_cmd:{type:"show_section"}} run return 
 execute if data storage ponder:scene {cur_cmd:{type:"modify_block"}} run return run function ponder:process/scene/single/cmd/modify_block/
 #pos[3],operation:<string>，格式为<目标nbt> 操作名称 后续数据（与data modify block ~ ~ ~ 后的内容相同）*show_particle:<bool>，是否显示破坏粒子
 execute if data storage ponder:scene {cur_cmd:{type:"modify_tile_nbt"}} run return run function ponder:process/scene/single/cmd/modify_tile_nbt/
-#*mode:<string>offset或者top_right，默认为offset,text:<文本组件>,*duration:<int>默认为30,若mode为offset则*offset:<double>,pos[3]
+#*mode:<string>offset或者top_right，默认为offset,text:<文本组件>,*duration:<int>默认为30,若mode为offset则*offset:<double>,pos[3],若mode为top_right则*grid[2](x,y),%default:[-1,0.6]
 execute if data storage ponder:scene {cur_cmd:{type:"show_text"}} run return run function ponder:process/scene/single/cmd/show_text/
 #pos[3] 锚点,*scale:[3]缩放，默认为[1,1,1], *duration:<int>默认为20,*color:<int>默认为0（白色），覆盖发光边框颜色，
 #若为整型整型，则以十进制数字表示RGB颜色，即：Red<<16 + Green<<8 + Blue，最高8位对RGB颜色没有任何作用。

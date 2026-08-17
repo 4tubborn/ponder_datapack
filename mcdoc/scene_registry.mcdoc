@@ -1,4 +1,4 @@
-use ::java::util::BlockState
+use ::java::util::block_state::BlockState
 //use ::java::util::direction::Direction
 //use ::java::util::direction::VerticalDirection
 use ::java::util::color::RGB
@@ -65,9 +65,17 @@ struct SetSingleBlock {
   block_state: BlockState,
   pos: Vec3i,
   //TODO
-  /// List format of block states
   state?: #[match_regex="^\\[(([a-z0-9_]+=[a-z0-9_]+,)*[a-z0-9_]+=[a-z0-9_]+,?)?\\]$"] string,
+  //...ponder:block_state_handler[[block_state.Properties]],
   //mcdoc:block_states[[block_state.Name]]
+}
+
+// No it does not work!
+dispatch ponder:block_state_handler[%none] to ()
+
+dispatch ponder:block_state_handler[%unknown] to struct {
+  /// List format of block states
+  state: #[match_regex="^\\[(([a-z0-9_]+=[a-z0-9_]+,)*[a-z0-9_]+=[a-z0-9_]+,?)?\\]$"] string,
 }
 
 struct PonderAction {
@@ -150,7 +158,8 @@ dispatch ponder:action[show_text] to struct {
   }
   // Extra fields when mode:top_right
   dispatch ponder:text[top_right] to struct {
-
+    // Default: [-1,0.6]
+    grid?: [double] @ 2,
   }
 
 dispatch ponder:action[show_outline] to struct {

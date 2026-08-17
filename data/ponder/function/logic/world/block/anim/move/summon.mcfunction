@@ -10,4 +10,4 @@ $execute positioned 0.0 0.0 0.0 run summon block_display ~$(x) ~$(y) ~$(z) {\
     interpolation_duration:$(duration),\
 }
 
-say [LOG]summoned block display entity!!!!!!!!
+#say [LOG]summoned block display entity!!!!!!!!

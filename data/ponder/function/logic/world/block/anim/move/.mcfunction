@@ -30,7 +30,7 @@ data modify storage ponder:anim cur_block_move.duration set from storage ponder:
 
 #tellraw @a [{text:"cur_block: ",color:"red"},{storage:"ponder:anim",nbt:"cur_block_move"}]
 
-tellraw @a ["move: ",{storage:"ponder:anim",nbt:"cur_block_move"}]
+#tellraw @a ["move: ",{storage:"ponder:anim",nbt:"cur_block_move"}]
 
 function ponder:logic/world/block/anim/move/summon with storage ponder:anim cur_block_move
 

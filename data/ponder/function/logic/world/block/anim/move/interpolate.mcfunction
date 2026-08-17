@@ -5,5 +5,4 @@ data modify entity @s {} merge from storage ponder:tmp move
 
 scoreboard players reset @s ponder.timer.in
 
-say inter
 #tellraw @a ["block_hide: ",{storage:"ponder:logic",nbt:"block_hide",color:"yellow"}]

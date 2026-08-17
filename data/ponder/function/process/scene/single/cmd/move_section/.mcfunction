@@ -10,6 +10,5 @@ data modify storage ponder:logic block_move.direction set from storage ponder:ut
 
 #execute unless data storage ponder:logic block_move.direction run return run tellraw @a {color:"red",translate:"[Error] move_section: Expect field \"direction\" not be empty"}
 #tellraw @a ["dir: ",{storage:"ponder:utils",nbt:"output.direction.vec"}]
-say move1
 
 function ponder:logic/api/world/block/anim/move

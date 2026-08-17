@@ -7,11 +7,12 @@ execute unless data storage ponder:scene cur_cmd run return run function ponder:
 data remove storage ponder:scene cur_scene[0]
 
 #tellraw @a ["cur_cmd: ",{storage:"ponder:scene",nbt:"cur_cmd"}]
+scoreboard players set @s ponder.timer 0
 
 function ponder:process/scene/single/decode
 
 scoreboard players add #cur ponder.group 1
 #若没有延时则直接进行下一个
-execute if score @p[tag=ponder.in_ponder] ponder.timer matches 0 run return run function ponder:process/scene/single/next
+execute as @p[tag=ponder.in_ponder,scores={ponder.timer=0}] run return run function ponder:process/scene/single/next
 #否则启用tick检测是否为0
 advancement revoke @s only ponder:process/next
