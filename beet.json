@@ -1,15 +1,12 @@
 {
   "data_pack": {
-    "load": "",
     "zipped": true,
     "name": "Ponder Data Pack {{ version }}"
   },
   "pipeline": [
-    "beet.contrib.minify_function",
+    "beet.contrib.minify_mcfunction",
     "beet.contrib.minify_json",
-    "py_scripts.merge_multiline",
-    "beet.contrib.render",
-    "py_scripts.generate.generate_checkerboard"
+    "beet.contrib.render"
   ],
   "meta": {
     "render_json": {
