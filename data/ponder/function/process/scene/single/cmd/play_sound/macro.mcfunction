@@ -1,0 +1,1 @@
+$playsound $(sound) $(category) @s ~ ~ ~ $(volume) $(pitch) $(min_volume)

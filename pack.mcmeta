@@ -1,6 +1,6 @@
 {
     "pack":{
-        "description": "Ponder Datapack v0.3.5",
+        "description": " Datapack v0.3.5",
         "min_format": 71,
         "max_format": 114514,
         "pack_format": 71,
@@ -9,11 +9,12 @@
     "overlays": {
         "entries": [
             {
-                "directory": "26.2+",
-                "min_format": 107
+                "directory": "since_26.2",
+                "min_format": 107,
+                "max_format": 114514
             },
             {
-                "directory": "1.21.11-",
+                "directory": "until_1.21.11",
                 "formats": [71,88],
                 "min_format": 71,
                 "max_format": 88

@@ -49,4 +49,6 @@ execute if data storage ponder:scene {cur_cmd:{type:"scale_camera"}} run return 
 execute if data storage ponder:scene {cur_cmd:{type:"rotate_camera"}} run return run function ponder:process/scene/single/cmd/rotate_camera/
 #run:命令
 execute if data storage ponder:scene {cur_cmd:{type:"run_command"}} run return run function ponder:process/scene/single/cmd/run_command/
+#sound:<sound_event>,*category:<enum>,*volume:<float>,*pitch:<float>,*min_volume:<float>
+execute if data storage ponder:scene {cur_cmd:{type:"play_sound"}} run return run function ponder:process/scene/single/cmd/play_sound/
 return run tellraw @a {color:"red",translate:"[Error] Scene decoding: Unknown type \"%s\"",with:[{storage:"ponder:scene",nbt:"cur_cmd.type"}]}

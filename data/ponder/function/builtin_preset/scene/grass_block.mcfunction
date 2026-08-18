@@ -7,7 +7,7 @@ data modify storage ponder:index scene."grass_block" set value [\
             {pos:[1,1,1],block_state:{Name:"grass_block"}},\
             {pos:[1,1,2],block_state:{Name:"observer",Properties:{facing:"west"}},state:"[facing=west]"},\
         ]},\
-        {type:"set_block",block:{block_state:{Name:"diamond_block",Properties:{}},pos:[2,1,1]}},\
+        {type:"set_block",block:{block_state:{Name:"diamond_block"},pos:[2,1,1]}},\
         {type:"show_section",direction:"down"},\
         {type:"idle",duration:30},\
         {type:"modify_block",pos:[1,1,1],block:"oak_shelf",show_particle:true},\

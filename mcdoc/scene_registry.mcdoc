@@ -34,6 +34,7 @@ enum(string) EPonderActionType {
   ScaleCamera = "scale_camera",
   RotateCamera = "rotate_camera",
   RunCommand = "run_command",
+  PlaySound = "play_sound",
 }
 
 type Vec3d = [double] @ 3
@@ -265,4 +266,16 @@ dispatch ponder:action[rotate_camera] to struct {
 
 dispatch ponder:action[run_command] to struct {
   run: #[command] string,
+}
+
+// Check Wiki https://minecraft.wiki/w/Commands/playsound for definitions
+dispatch ponder:action[play_sound] to struct {
+  sound: #[id="sound_event"] string,
+  category?: ("master"|"music"|"record"|"weather"|"block"|"hostile"|"neutral"|"player"|"ambient"|"voice"|"ui"),
+  /// Default 1.0.
+	volume?: float @ 0..1,
+	/// Default 1.0.
+	pitch?: float @ 0..1,
+  /// Default 0.0
+  min_volume?: float @ 0..1,
 }
