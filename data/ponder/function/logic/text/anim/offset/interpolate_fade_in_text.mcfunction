@@ -2,7 +2,7 @@
 data modify storage ponder:anim text set value {\
     transformation:{\
         translation:[0,0,0],\
-        scale:[0.25,0.25,0.25],\
+        scale:[0.2,0.2,0.2],\
     },\
     start_interpolation: 0,\
     interpolation_duration: 5,\

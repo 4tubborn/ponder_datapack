@@ -1,7 +1,7 @@
 data modify entity @s {} merge value \
 {\
     transformation:{\
-        scale:[0.25,0.25,0.25],\
+        scale:[0.2,0.2,0.2],\
     },\
     start_interpolation: 0,\
     interpolation_duration: 5,\

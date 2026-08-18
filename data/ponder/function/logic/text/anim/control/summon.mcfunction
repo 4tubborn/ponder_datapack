@@ -10,7 +10,4 @@ $summon text_display $(x) $(y) $(z) {\
     teleport_duration:1,\
     transformation:{translation:[0f,1f,0f],left_rotation:[0f,0f,0f,1f],scale:[0f,0f,0f],right_rotation:[0f,0f,0f,1f]}\
 }
-#根据距离调整大小，为了在视觉上一样大
-function ponder:logic/text/anim/control/scale
-
 #rotate @n[type=text_display,tag=ponder.anim.text.offset] facing entity @p[tag=ponder.in_ponder] eyes

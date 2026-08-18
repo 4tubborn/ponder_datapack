@@ -1,6 +1,5 @@
 $summon text_display ^ ^ ^1 {\
     Tags:["ponder.scene_entity","ponder.init","ponder.anim.text.top_right","ponder.anim.cam_moving"],\
-    text:$(text),\
     see_through:true,\
     billboard:"center",\
     alignment:"left",\

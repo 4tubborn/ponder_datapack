@@ -1,7 +1,7 @@
 #block
 data modify storage ponder:anim text set value {\
     transformation:{\
-        translation:[0,0.055,0],\
+        translation:[0,0.045,0.007],\
         scale:[0.01,0.006,0.006],\
     },\
     start_interpolation: 0,\

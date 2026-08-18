@@ -1,5 +1,5 @@
 tag @p[tag=ponder.in_ponder] add tu-utils.distance_anchor1
-tag @n[tag=ponder.init,type=text_display,tag=ponder.anim.text.control] add tu-utils.distance_anchor2
+tag @s add tu-utils.distance_anchor2
 function #tu-utils:get_distance
 #tellraw @a ["distance: ",{score:{name:"#distance",objective:"tu-utils.out"}}]
 
@@ -23,5 +23,5 @@ execute store result storage ponder:anim text.transformation.scale[2] float 0.00
 
 #tellraw @a ["scale: ",{storage:"ponder:anim",nbt:"text",color:"red"}]
 
-execute as @n[tag=ponder.init,type=text_display,tag=ponder.anim.text.control] run data modify entity @s {} merge from storage ponder:anim text
+execute as @s run data modify entity @s {} merge from storage ponder:anim text
 #tellraw @a ["nbt: ",{entity:"@n[type=text_display,tag=ponder.anim.text.control]",nbt:"interpolation_duration",color:"yellow"}]

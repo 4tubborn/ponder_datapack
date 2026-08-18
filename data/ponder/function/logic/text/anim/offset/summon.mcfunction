@@ -1,7 +1,6 @@
 #say summoned TEXT DISPLAY!!!!!!!!!!!!!!!!!!!!!!
 $execute positioned 0.0 0.0 0.0 run summon text_display ~$(x) ~$(y) ~$(z) {\
     Tags:["ponder.scene_entity","ponder.init","ponder.anim.text.offset","ponder.anim.cam_moving"],\
-    text:$(text),\
     see_through:true,\
     billboard:"center",\
     alignment:"left",\
