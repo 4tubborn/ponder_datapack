@@ -269,6 +269,7 @@ dispatch ponder:action[run_command] to struct {
 }
 
 // Check Wiki https://minecraft.wiki/w/Commands/playsound for definitions
+// Played at the position of the player
 dispatch ponder:action[play_sound] to struct {
   sound: #[id="sound_event"] string,
   category?: ("master"|"music"|"record"|"weather"|"block"|"hostile"|"neutral"|"player"|"ambient"|"voice"|"ui"),

@@ -1,17 +1,19 @@
 {
+  "author": "4tubborn",
+  "description": "Implements some Ponder mod features in data pack.",
   "data_pack": {
     "zipped": true,
-    "name": "Ponder Data Pack {{ version }}"
+    "name": "Ponder Data Pack {{ version }}",
+    "load": ["."]
   },
   "pipeline": [
-    "beet.contrib.minify_mcfunction",
+    "beet.contrib.minify_function",
     "beet.contrib.minify_json",
-    "beet.contrib.render"
+    "beet.contrib.render",
+    "py_scripts.include_files"
   ],
   "meta": {
-    "render_json": {
-      "match": ["pack.mcmeta"]
-    },
+    
     "version": "v0.3.5"
   },
   "output": "build"

@@ -10,7 +10,7 @@ data modify storage ponder:index scene."grass_block" set value [\
         {type:"set_block",block:{block_state:{Name:"diamond_block"},pos:[2,1,1]}},\
         {type:"show_section",direction:"down"},\
         {type:"idle",duration:30},\
-        {type:"modify_block",pos:[1,1,1],block:"chiseled_bookshelf",show_particle:true},\
+        {type:"modify_block",pos:[1,1,1],block:"brewing_stand",show_particle:true},\
         {type:"idle",duration:20},\
         {type:"show_control",pos:[1,2,2],right_click:true},\
         {type:"show_text",pos:[1,1,2],text:{text:"Hello, world!"},duration:100},\
