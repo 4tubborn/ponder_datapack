@@ -10,6 +10,7 @@
         "entries": [
             {
                 "directory": "since_26.2",
+                "formats": [107,114514],
                 "min_format": 107,
                 "max_format": 114514
             },
