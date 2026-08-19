@@ -147,8 +147,18 @@ dispatch ponder:action[show_text] to struct {
   // Default: 30
   duration?: int @ 1..,
   text: Text,
+  // Default: auto
+  // auto: If the text is on the right, the alignment will be right, and vice versa.
+  alignment?: TextAlignment,
   ...ponder:text[[mode]],
 }
+
+  enum(string) TextAlignment {
+    Center = "center",
+    Left = "left",
+    Right = "right",
+    Auto = "auto",
+  }
 
   // Extra fields when mode:offset
   dispatch ponder:text[offset, %none] to struct {

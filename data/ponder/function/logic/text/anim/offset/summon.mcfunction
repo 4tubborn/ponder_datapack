@@ -3,7 +3,7 @@ $execute positioned 0.0 0.0 0.0 run summon text_display ~$(x) ~$(y) ~$(z) {\
     Tags:["ponder.scene_entity","ponder.init","ponder.anim.text.offset","ponder.anim.cam_moving"],\
     see_through:true,\
     billboard:"center",\
-    alignment:"left",\
+    alignment:"$(alignment)",\
     teleport_duration:1,\
     transformation:{translation:[$(offset),0f,0f],left_rotation:[0f,0f,0f,1f],scale:[0f,0f,0f],right_rotation:[0f,0f,0f,1f]},\
     Passengers:[{\

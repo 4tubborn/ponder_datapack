@@ -1,0 +1,2 @@
+execute unless data storage ponder:logic text.alignment run return run function ponder:logic/text/anim/top_right/get/align_
+execute if data storage ponder:logic {text:{alignment:"auto"}} run return run function ponder:logic/text/anim/top_right/get/align_

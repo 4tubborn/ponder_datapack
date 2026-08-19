@@ -6,6 +6,8 @@ function ponder:logic/text/anim/xyz
 #say duration
 
 execute unless data storage ponder:logic text.offset run data modify storage ponder:logic text.offset set value 3
+#get alignment
+function ponder:logic/text/anim/offset/get/alignment
 
 function ponder:logic/text/anim/offset/summon with storage ponder:logic text
 

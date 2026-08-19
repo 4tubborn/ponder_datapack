@@ -2,6 +2,9 @@ data modify storage ponder:logic text.x set value 1
 data modify storage ponder:logic text.y set value 0.6
 data modify storage ponder:logic text.x set from storage ponder:logic text.grid[0]
 data modify storage ponder:logic text.y set from storage ponder:logic text.grid[1]
+#get alignment
+function ponder:logic/text/anim/top_right/get/alignment
+
 execute at @p[tag=ponder.in_ponder] run function ponder:logic/text/anim/top_right/summon with storage ponder:logic text
 
 execute unless data storage ponder:logic text.duration run data modify storage ponder:logic text.duration set value 30
