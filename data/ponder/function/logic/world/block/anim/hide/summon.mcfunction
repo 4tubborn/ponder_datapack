@@ -6,7 +6,6 @@ $setblock $(x) $(y) $(z) air
 $execute positioned 0.0 0.0 0.0 run summon block_display ~$(x) ~$(y) ~$(z) {\
     Tags:["ponder.scene_entity","ponder.init","ponder.anim.hide"],\
     block_state:$(block_state),\
-    data:{ponder:{anim:{direction:$(direction)}}}\
 }
 
 #say [LOG]summoned block display entity!!!!!!!!

@@ -16,12 +16,9 @@ data modify storage ponder:anim cur_block_hide.block_state.Properties set from s
 #data modify storage ponder:anim cur_block_hide.block_state.Name set from storage bs:out block.type
 #data modify storage ponder:anim cur_block_hide.block_state.Properties set from storage bs:out block.properties
 
-data modify storage ponder:anim cur_block_hide.direction set from storage ponder:logic block_hide.direction
-#data modify storage ponder:utils input.direction.string set from storage ponder:anim cur_block_hide.direction
-#execute unless data storage ponder:utils input.direction.string run data modify storage ponder:utils input.direction.string set value "down"
-#function ponder:logic/api/utils/direction/string_to_vec_inv_norm
-#data modify storage ponder:anim cur_block_hide.direction set from storage ponder:utils output.direction.vec
+#data modify storage ponder:anim cur_block_hide.direction set from storage ponder:logic block_hide.direction
 
+data modify storage ponder:logic scene_buffer.hide_section.direction append from storage ponder:logic block_hide.direction
 #tellraw @a [{text:"cur_block: ",color:"red"},{storage:"ponder:anim",nbt:"cur_block_hide"}]
 
 #tellraw @a ["hide: ",{storage:"ponder:anim",nbt:"cur_block_hide"}]

@@ -282,6 +282,7 @@ dispatch ponder:action[run_command] to struct {
 // Played at the position of the player
 dispatch ponder:action[play_sound] to struct {
   sound: #[id="sound_event"] string,
+  // Default: master
   category?: ("master"|"music"|"record"|"weather"|"block"|"hostile"|"neutral"|"player"|"ambient"|"voice"|"ui"),
   /// Default 1.0.
 	volume?: float @ 0..1,

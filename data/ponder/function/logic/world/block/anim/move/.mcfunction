@@ -15,13 +15,15 @@ function ponder:logic/utils/block/get/ with storage ponder:anim cur_block_move
 data modify storage ponder:anim cur_block_move.block_state.Name set from storage bs:out block.type
 data modify storage ponder:anim cur_block_move.block_state.Properties set from storage bs:out block.properties
 #type[state]{nbt}
-data modify storage ponder:anim cur_block_move.block set from storage bs:out block.block
-
+#data modify storage ponder:anim cur_block_move.block set from storage bs:out block.block
+data modify storage ponder:logic scene_buffer.move_section.block append from storage bs:out block.block
 #tellraw @a ["data: ",{entity:"1b5ef-0-0-1-7f3c00000000",nbt:"item.components"}]
 #data modify storage ponder:anim cur_block_move.block_state.Name set from storage bs:out block.type
 #data modify storage ponder:anim cur_block_move.block_state.Properties set from storage bs:out block.properties
 
-data modify storage ponder:anim cur_block_move.direction set from storage ponder:logic block_move.direction
+#data modify storage ponder:anim cur_block_move.direction set from storage ponder:logic block_move.direction
+data modify storage ponder:logic scene_buffer.move_section.direction append from storage ponder:logic block_move.direction
+
 data modify storage ponder:anim cur_block_move.duration set from storage ponder:logic block_move.duration
 #data modify storage ponder:utils input.direction.string set from storage ponder:anim cur_block_move.direction
 #execute unless data storage ponder:utils input.direction.string run data modify storage ponder:utils input.direction.string set value "down"
